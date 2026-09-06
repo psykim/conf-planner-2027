@@ -22,7 +22,12 @@
 - 기존 아티팩트판은 병행 유지(루틴 대상 + 교수 개인용). 팀 입력은 웹앱으로 일원화.
 
 ## 확인 대기 (사용자)
-- 배포 URL에서 매직링크 로그인 1회 확인(수신 이메일의 링크가 배포 페이지로 돌아오는지).
+- ★ **[프로덕션 차단 요소] Supabase redirect 허용 목록에 배포 URL 추가** — 배포 페이지에서 보낸
+  매직링크가 현재 `localhost:3000`(Site URL 기본값)으로 리다이렉트되어 열리지 않는다(2026-09-06 실측.
+  로컬 127.0.0.1은 허용 목록에 있어 정상). 대시보드 세션 만료로 Claude가 대신 못 함(비밀번호 로그인은
+  보안상 사용자 몫). **사용자가 supabase.com/dashboard 로그인만 해 주면 Claude가 이어서 설정** —
+  또는 직접: Authentication → URL Configuration → Redirect URLs에
+  `https://psykim.github.io/conf-planner-2027/**` 추가. 추가 후 배포 URL 매직링크 1회 재검증 필요.
 - 팀원 이메일 명단 → 화이트리스트 등록 지시.
 - Supabase 기본 이메일 발송 한도(시간당 2통 수준)로 팀원 로그인이 몰리면 지연될 수 있음 —
   문제 되면 custom SMTP(예: Resend 무료) 연결 결재.
