@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 학회 플래너</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗓️</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="auth" class="auth">
+  <div class="auth-card">
+    <h1>2027 학회 플래너</h1>
+    <p>연구팀 전용 페이지입니다. 팀에 등록된 이메일로 로그인 링크를 받아 접속하세요.</p>
+    <form id="loginForm" autocomplete="on">
+      <input id="loginEmail" type="email" placeholder="이메일 주소" required autocomplete="email">
+      <button type="submit" id="loginBtn">로그인 링크 받기</button>
+    </form>
+    <p class="auth-msg" id="authMsg"></p>
+  </div>
+</div>
+
+<div class="wrap">
+<header class="top">
+  <h1>2027 학회 플래너</h1>
+  <span class="asof">치매 · 신경과학 · 정신과학 · 의료 AI — 공식 홈페이지 기준 2026년 9월 6일 확인</span>
+  <span class="userchip" id="userChip" hidden><span class="mono" id="userEmail"></span><button type="button" id="logoutBtn">로그아웃</button></span>
+</header>
+
+<div class="controls" role="group" aria-label="필터">
+  <button class="chip" data-cat="all" aria-pressed="true">전체</button>
+  <button class="chip" data-cat="dem" aria-pressed="false"><span class="dot dot-dem"></span>치매·신경퇴행</button>
+  <button class="chip" data-cat="neuro" aria-pressed="false"><span class="dot dot-neuro"></span>신경과학·신경과</button>
+  <button class="chip" data-cat="psych" aria-pressed="false"><span class="dot dot-psych"></span>정신과학</button>
+  <button class="chip" data-cat="ai" aria-pressed="false"><span class="dot dot-ai"></span>의료 AI</button>
+  <button class="chip" id="starFilter" aria-pressed="false">★ 관심만</button>
+  <button class="chip" id="goingFilter" aria-pressed="false">✓ 참가 결정만</button>
+  <span class="searchwrap"><input id="q" type="search" placeholder="학회·도시·베뉴 검색" aria-label="검색" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="suggest"><div id="suggest" role="listbox" hidden></div></span>
+</div>
+
+<div class="dl-strip" id="dlStrip" aria-label="다가오는 마감"></div>
+
+<div class="tl-scroll"><div class="tl">
+  <div class="tl-months" id="tlMonths"></div>
+  <div id="tlRows"></div>
+  <div class="tba-note" id="tbaNote"></div>
+</div></div>
+
+<p class="empty" id="empty">조건에 맞는 학회가 없습니다.</p>
+
+<h2>2027년 개최 없음 · 일정 미발표 <small>클릭하면 상세 팝업</small></h2>
+<div class="list" id="tbaList"></div>
+
+<h2>일정 전략 메모</h2>
+<div class="tips">
+  <ul>
+    <li><b>완전 중복:</b> AAN(워싱턴DC)–APA(뉴욕) 5/1–5 동일 일정 · HAI(1/13–15)–ACNP(1/10–13) 중복 · ECNP(9/25–28)–MDS(9/26–30) 중복 · AD/PD(3/16–20)–CNS(3/20–23) 하루 겹침</li>
+    <li><b>묶어가기 좋은 조합:</b> 6월 스웨덴 — EAN 예테보리(6/12–15) → ILBDC 스톡홀름(6/16–18) 연속 참석 가능 · 5월 초 미국 — APA 뉴욕(5/1–5) → SOBP 시카고(5/6–8)</li>
+    <li><b>아시아 개최(이동 부담 적음):</b> IC-KDA 서울(4월) · Tau Global 도쿄(6월) · VasCog 싱가포르(11월)</li>
+    <li><b>랩 연구 방향(영상·AI·디지털마커) 기준 우선 검토:</b> AAIC · AD/PD(종합) → HAI · OHBM(영상) → CTAD(임상시험·디지털 endpoint) → IPA(치매 정신의학)</li>
+    <li><b>의료 AI(9/6 추가):</b> 방법론은 MICCAI 오클랜드(9/27–10/1)·IPMI 퀘벡(6/27–7/2, <b>논문 마감 2026-12-07</b>) 최우선 · MIDL 포르투(7/14–16) 직후 AAIC 시카고 연속 가능 — 단 OHBM–IPMI · ECNP/MDS–MICCAI · VasCog–RSNA · WPA–AMIA · FENS–ISBI · ILBDC–SIIM 일정 중복 주의</li>
+  </ul>
+</div>
+
+<footer>
+모든 일정·장소는 2026년 9월 6일 기준 각 학회 공식 홈페이지에서 확인했으며, 약탈적(predatory) 주최사의 행사는 제외했습니다.
+"미공지" 항목과 잠정 정보는 각 학회 공식 사이트에서 최신 공지를 재확인하세요. D-day는 이 페이지를 여는 시점 기준으로 자동 계산됩니다.
+</footer>
+</div>
+
+<dialog id="modal" aria-labelledby="mAcro"><div class="m-wrap" id="mWrap"></div></dialog>
+
+<div class="tooltip" id="tip" role="tooltip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
