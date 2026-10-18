@@ -1,8 +1,17 @@
 # STATUS — 현재 상태 (새 세션은 이 파일만 읽고 착수한다)
 
-> 갱신 2026-10-18 · 규칙은 CLAUDE.md · 이력은 docs/history/INDEX.md
+> 갱신 2026-10-18 (v1.0.2) · 규칙은 CLAUDE.md · 이력은 docs/history/INDEX.md
 
 ## 지금
+- **v1.0.2 — 다른 페이지 안(iframe)에서도 로그인 이어받기** (2026-10-18, 사용자 결재). Chrome 은
+  iframe 저장소를 최상위 사이트별로 떼어 줘서(third-party storage partitioning) CV 대시보드 탭 안의 앱은
+  단독 창의 로그인을 못 보고, 메일 링크는 새 창에서 열려 탭은 영영 로그인 화면이었다. 이제 iframe 이면
+  `document.requestStorageAccess({localStorage:true})`로 단독 창과 같은 localStorage 를 얻어 Supabase
+  auth storage 로 쓴다(createClient 의 `auth.storage` 어댑터). 자동으로 못 얻으면 '이 브라우저의 로그인
+  이어받기' 단추(클릭 요구 대응), 끝내 못 얻으면 예전 동작. iframe 이 로그인 화면일 때 4초마다 세션을
+  다시 읽어, 단독 창에서 로그인하면 탭도 저절로 진입. 로컬 스모크(저장소 분리를 켠 Chrome — **Playwright
+  기본값은 분리를 꺼 두므로 `ignoreDefaultArgs:true` 필수**): 단독 로그인→탭 이어받기 · 탭 대기 중 단독
+  로그인→자동 진입 · API 없음→예전 동작 · 자동 거절→단추 클릭→진입, v1.0.1 단독 창 5종 회귀 통과.
 - **v1.0.1 — 로그인 유지 보강** (2026-10-18, 사용자 결재). 예전 `handleSession`은 `conf_is_allowed`
   rpc가 *어떤 이유로든* 실패하면(네트워크 끊김·잠자기 직후 만료 토큰) `signOut()` → 브라우저 세션 삭제 →
   "다시 로그인". 이제 `checkAllowed()`가 서버의 명확한 false일 때만 로그아웃하고, 오류면

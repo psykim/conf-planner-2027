@@ -4,7 +4,28 @@
 /* ---------- supabase ---------- */
 const SB_URL = "https://dktalgktntdlqclykhoz.supabase.co";
 const SB_KEY = "sb_publishable_4Nhbi_UqgQYKb4D4zk0rZA_U4LzgWAr"; /* publishable key — 공개용, 데이터는 RLS로 보호 */
-const sb = supabase.createClient(SB_URL, SB_KEY);
+/* 다른 페이지 안(iframe, 예: CV 대시보드 탭)에 들어가면 Chrome 이 저장소를 따로 떼어 줘서 단독 창의
+   로그인이 안 보인다. Storage Access API 로 단독 창과 같은 localStorage 를 얻어 로그인을 이어받는다
+   (2026-10-18). 얻지 못하면 iframe 자체 저장소를 쓴다 — 예전과 같은 동작. */
+const EMBEDDED = window.top !== window;
+let sharedLS = null, saaFailed = false;
+async function getSharedStorage(){
+  try{
+    const h=await document.requestStorageAccess({localStorage:true});
+    if(h&&h.localStorage){sharedLS=h.localStorage;return true;}
+  }catch(e){}
+  return false;
+}
+const storageReady=(EMBEDDED&&document.requestStorageAccess)
+  ? getSharedStorage().then(ok=>{saaFailed=!ok;})
+  : Promise.resolve();
+function authLS(){return sharedLS||localStorage;}
+const authStorage={
+  async getItem(k){await storageReady;try{return authLS().getItem(k);}catch(e){return null;}},
+  async setItem(k,v){await storageReady;try{authLS().setItem(k,v);}catch(e){}},
+  async removeItem(k){await storageReady;try{authLS().removeItem(k);}catch(e){}}
+};
+const sb = supabase.createClient(SB_URL, SB_KEY, {auth:{storage:authStorage}});
 
 /* ---------- helpers ---------- */
 const $=s=>document.querySelector(s);
@@ -583,7 +604,33 @@ const authEl=$("#auth"), authMsg=$("#authMsg"), loginForm=$("#loginForm"), login
 let bootPromise=null, authBusy=false;
 
 function setAuthMsg(msg,cls){authMsg.textContent=msg||"";authMsg.className="auth-msg"+(cls?" "+cls:"");}
-function showAuth(){authEl.hidden=false;document.body.classList.remove("authed");}
+function showAuth(){authEl.hidden=false;document.body.classList.remove("authed");showSaaButton();}
+
+/* iframe 안: 단독 창에서 로그인하면(메일 링크는 새 창으로 열린다) 이 화면도 저절로 들어오게 몇 초마다 확인 */
+if(EMBEDDED){
+  setInterval(async()=>{
+    if(document.body.classList.contains("authed")||bootPromise)return;
+    const {data:{session}}=await sb.auth.getSession();
+    if(session)handleSession(session);
+  },4000);
+}
+/* 브라우저가 클릭을 요구해 자동으로 못 이어받았을 때만 보이는 단추 */
+function showSaaButton(){
+  if(!EMBEDDED||!saaFailed||!document.requestStorageAccess||$("#saaBtn"))return;
+  const b=document.createElement("button");
+  b.id="saaBtn"; b.type="button"; b.textContent="이 브라우저의 로그인 이어받기";
+  b.addEventListener("click",async()=>{
+    if(await getSharedStorage()){
+      saaFailed=false; b.remove();
+      const {data:{session}}=await sb.auth.getSession();
+      if(session)handleSession(session);
+      else setAuthMsg("이어받을 로그인이 아직 없습니다 — 아래로 로그인하면 이 화면도 저절로 들어옵니다.");
+    }
+    else setAuthMsg("이 브라우저에서는 이어받을 수 없습니다 — 아래로 로그인하거나 새 창에서 여세요.","err");
+  });
+  loginForm.parentNode.insertBefore(b,loginForm);
+}
+storageReady.then(()=>{if(!authEl.hidden)showSaaButton();});
 
 async function startApp(session){
   authEl.hidden=true;
@@ -680,7 +727,9 @@ loginForm.addEventListener("submit",async e=>{
     if(!allowed){setAuthMsg("팀에 등록되지 않은 이메일입니다 — 관리자에게 등록을 요청하세요.","err");return;}
     const {error:e2}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname}});
     if(e2)throw e2;
-    setAuthMsg("로그인 링크를 이메일로 보냈습니다 — 메일함(스팸함 포함)에서 링크를 열면 접속됩니다.","ok");
+    setAuthMsg(EMBEDDED&&sharedLS
+      ?"로그인 링크를 이메일로 보냈습니다 — 링크는 새 창으로 열리고, 로그인되면 이 화면도 몇 초 안에 저절로 들어옵니다."
+      :"로그인 링크를 이메일로 보냈습니다 — 메일함(스팸함 포함)에서 링크를 열면 접속됩니다.","ok");
   }catch(ex){
     const msg=String((ex&&ex.message)||"");
     setAuthMsg(/rate ?limit/i.test(msg)
