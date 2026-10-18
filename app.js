@@ -614,19 +614,52 @@ async function startApp(session){
   });
 }
 
+/* 명단 확인 — "yes" / "no"(서버가 분명히 false) / "unknown"(네트워크·만료 토큰 등 오류).
+   오류일 때는 토큰을 새로 받아 다시 묻는다. 예전에는 오류도 로그아웃으로 처리해 잠자기 직후·
+   토큰 만료 순간에 로그인이 풀렸다(2026-10-18). */
+async function checkAllowed(){
+  for(let i=0;i<3;i++){
+    try{
+      const {data,error}=await sb.rpc("conf_is_allowed");
+      if(!error)return data===true?"yes":"no";
+    }catch(e){}
+    /* 끊긴 망에서는 refreshSession 이 자체 재시도로 오래 붙잡히므로 8초에서 끊는다 */
+    try{await Promise.race([sb.auth.refreshSession(),new Promise(r=>setTimeout(r,8000))]);}catch(e){}
+    await new Promise(r=>setTimeout(r,1500*(i+1)));
+  }
+  return "unknown";
+}
+
+let retryTimer=null;
 function handleSession(session){
   if(!session){showAuth();return;}
   if(bootPromise)return;
   bootPromise=(async()=>{
-    let allowed=false;
-    try{const {data,error}=await sb.rpc("conf_is_allowed"); allowed=!error&&data===true;}catch(e){}
-    if(!allowed){
+    setAuthMsg("로그인 확인 중…");
+    const res=await checkAllowed();
+    if(res==="no"){
       bootPromise=null;
       setAuthMsg(((session.user&&session.user.email)||"이 계정")+"은(는) 아직 팀에 등록되지 않았습니다 — 관리자에게 등록을 요청하세요.","err");
       await sb.auth.signOut();
       return;
     }
-    startApp(session);
+    if(res==="unknown"){
+      /* 로그인은 지우지 않는다 — 연결이 돌아오면 자동으로 다시 확인 */
+      bootPromise=null;
+      showAuth();
+      setAuthMsg("서버에 연결하지 못했습니다 — 로그인은 유지돼 있으니 잠시 후 자동으로 다시 시도합니다.","err");
+      const retry=async()=>{
+        clearTimeout(retryTimer); window.removeEventListener("online",retry);
+        const {data:{session:s}}=await sb.auth.getSession();
+        if(s)handleSession(s); else setAuthMsg("");
+      };
+      window.addEventListener("online",retry);
+      retryTimer=setTimeout(retry,15000);
+      return;
+    }
+    clearTimeout(retryTimer); setAuthMsg("");
+    const {data:{session:fresh}}=await sb.auth.getSession();   // refreshSession 뒤라면 새 토큰으로 실시간 인증
+    startApp(fresh||session);
   })();
 }
 
