@@ -30,6 +30,12 @@
   <span class="userchip" id="userChip" hidden><span class="mono" id="userEmail"></span><button type="button" id="logoutBtn">로그아웃</button></span>
 </header>
 
+<nav class="tabs" role="tablist" aria-label="보기 전환">
+  <button type="button" class="tab" role="tab" id="tabBtn-plan" data-tab="plan" aria-controls="tab-plan" aria-selected="true">🗓 학회 플래너</button>
+  <button type="button" class="tab" role="tab" id="tabBtn-cards" data-tab="cards" aria-controls="tab-cards" aria-selected="false">📋 관리카드 <span class="tab-n mono" id="tabCardsN"></span></button>
+</nav>
+
+<section id="tab-plan" role="tabpanel" aria-labelledby="tabBtn-plan">
 <div class="controls" role="group" aria-label="필터">
   <button class="chip" data-cat="all" aria-pressed="true">전체</button>
   <button class="chip" data-cat="dem" aria-pressed="false"><span class="dot dot-dem"></span>치매·신경퇴행</button>
@@ -51,9 +57,6 @@
 
 <p class="empty" id="empty">조건에 맞는 학회가 없습니다.</p>
 
-<h2>참가 학회 관리카드 <small>참가로 체크하면 자동 생성 · 카드를 누르면 상세 편집</small></h2>
-<div class="mcards" id="mcards"><p class="mc-empty">팀 공유 연결 중…</p></div>
-
 <h2>2027년 개최 없음 · 일정 미발표 <small>클릭하면 상세 팝업</small></h2>
 <div class="list" id="tbaList"></div>
 
@@ -67,6 +70,12 @@
     <li><b>의료 AI(9/6 추가):</b> 방법론은 MICCAI 오클랜드(9/27–10/1)·IPMI 퀘벡(6/27–7/2, <b>논문 마감 2026-12-07</b>) 최우선 · MIDL 포르투(7/14–16) 직후 AAIC 시카고 연속 가능 — 단 OHBM–IPMI · ECNP/MDS–MICCAI · VasCog–RSNA · WPA–AMIA · FENS–ISBI · ILBDC–SIIM 일정 중복 주의</li>
   </ul>
 </div>
+</section>
+
+<section id="tab-cards" role="tabpanel" aria-labelledby="tabBtn-cards" hidden>
+<p class="tab-sub">참가로 체크한 학회마다 자동으로 생깁니다 · 카드를 누르면 상세 팝업에서 편집합니다</p>
+<div class="mcards" id="mcards"><p class="mc-empty">팀 공유 연결 중…</p></div>
+</section>
 
 <footer>
 모든 일정·장소는 2026년 9월 6일 기준 각 학회 공식 홈페이지에서 확인했으며, 약탈적(predatory) 주최사의 행사는 제외했습니다.

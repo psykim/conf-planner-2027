@@ -166,7 +166,8 @@ function buildMgmtCards(){
   const ids=Object.keys(ATT).filter(id=>(ATT[id]||{}).status==="going");
   const confs=CONFS.filter(c=>ids.includes(c.id)).sort((a,b)=>pd(a.start)-pd(b.start));
   const tbas=TBA.filter(t=>ids.includes(t.id));
-  if(!confs.length&&!tbas.length){host.innerHTML='<p class="mc-empty">아직 참가로 체크한 학회가 없습니다 — 학회를 눌러 상세 팝업에서 ‘참가’를 고르면 여기에 관리카드가 생깁니다.</p>';return;}
+  const n=$("#tabCardsN"); if(n)n.textContent=(confs.length+tbas.length)||"";
+  if(!confs.length&&!tbas.length){host.innerHTML='<p class="mc-empty">아직 참가로 체크한 학회가 없습니다 — ‘학회 플래너’ 탭에서 학회를 눌러 상세 팝업의 ‘참가’를 고르면 여기에 관리카드가 생깁니다.</p>';return;}
   let html="";
   confs.forEach(c=>{
     const mem=MEMBERS[c.id]||[];
@@ -218,6 +219,34 @@ $("#mcards").addEventListener("keydown",e=>{
   if(e.key!=="Enter"&&e.key!==" ")return;
   const card=e.target.closest(".mcard"); if(card&&e.target===card){e.preventDefault();openModal(card.dataset.id);}
 });
+
+/* ---------- 탭: 학회 플래너 · 관리카드 (2026-10-21) ----------
+   주소 #cards / #plan 으로 바로 열 수 있고, 마지막 탭은 이 브라우저에 기억한다. */
+const TABS=["plan","cards"];
+function showTab(t,remember){
+  if(!TABS.includes(t))t="plan";
+  TABS.forEach(x=>{
+    $("#tab-"+x).hidden=x!==t;
+    const b=$("#tabBtn-"+x); b.setAttribute("aria-selected",String(x===t)); b.tabIndex=x===t?0:-1;
+  });
+  if(remember){
+    try{localStorage.setItem("conf2027-tab",t);}catch(e){}
+    try{history.replaceState(null,"","#"+t);}catch(e){}
+  }
+}
+document.querySelector(".tabs").addEventListener("click",e=>{
+  const b=e.target.closest(".tab"); if(b)showTab(b.dataset.tab,true);
+});
+document.querySelector(".tabs").addEventListener("keydown",e=>{
+  if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;
+  const cur=TABS.indexOf(document.querySelector('.tab[aria-selected="true"]').dataset.tab);
+  const nx=TABS[(cur+(e.key==="ArrowRight"?1:TABS.length-1))%TABS.length];
+  showTab(nx,true); $("#tabBtn-"+nx).focus(); e.preventDefault();
+});
+window.addEventListener("hashchange",()=>showTab(location.hash.slice(1)));
+(()=>{let t=location.hash.slice(1);
+  if(!TABS.includes(t)){try{t=localStorage.getItem("conf2027-tab")||"plan";}catch(e){t="plan";}}
+  showTab(t);})();
 
 /* ---------- detail modal ---------- */
 function openModal(id){
