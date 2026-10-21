@@ -332,9 +332,7 @@ document.querySelector(".tabs").addEventListener("keydown",e=>{
   showTab(nx,true); $("#tabBtn-"+nx).focus(); e.preventDefault();
 });
 window.addEventListener("hashchange",()=>showTab(location.hash.slice(1)));
-(()=>{let t=location.hash.slice(1);
-  if(!TABS.includes(t.split("/")[0])){try{t=localStorage.getItem("conf2027-tab")||"plan";}catch(e){t="plan";}}
-  showTab(t);})();
+/* 첫 화면 탭은 파일 맨 끝에서 고른다 — 상세 페이지가 ATT·MEMBERS(아래에서 선언)를 쓰므로 */
 
 /* ---------- detail modal ---------- */
 function openModal(id){
@@ -951,3 +949,6 @@ $("#logoutBtn").addEventListener("click",async()=>{
 });
 
 buildStrip(); buildTbaList(); apply();
+(()=>{let t=location.hash.slice(1);
+  if(!TABS.includes(t.split("/")[0])){try{t=localStorage.getItem("conf2027-tab")||"plan";}catch(e){t="plan";}}
+  showTab(t);})();
