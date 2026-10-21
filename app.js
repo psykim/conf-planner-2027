@@ -130,6 +130,95 @@ function updateRowBadges(){
   });
 }
 
+/* ---------- 참가 학회 관리카드 (참가=going 이면 자동 생성, 2026-10-21) ----------
+   학회 정보(data.js) + 주요 일정(학회 마감 + 팀원 출장·항공을 날짜순으로) + 참가자별 준비 현황.
+   읽기 전용 요약이다 — 편집은 카드를 눌러 여는 상세 팝업에서 한다. */
+function mcDay(n){return n<0?"지남":n===0?"오늘":"D-"+n;}
+function mcEvents(c,mem){
+  const ev=[];
+  c.dl.forEach(dl=>ev.push({d:dl.d,l:dl.l+(dl.note&&dl.d?` (${dl.note})`:""),k:dl.l.includes("마감")?"dl":"info",na:dl.d?null:(dl.note||"미공지")}));
+  ev.push({d:c.start,end:c.end,l:"학회 기간",k:"conf"});
+  /* 같은 날짜·같은 일정은 참가자 이름을 모아 한 줄로 */
+  const grp={};
+  const put=(d,l,k,name)=>{if(!d)return;const key=d+"|"+l;(grp[key]=grp[key]||{d,l,k,who:[]}).who.push(name);};
+  mem.forEach(m=>{
+    const nm=String(m.name||"");
+    if(m.hospFrom&&m.hospTo){const key=m.hospFrom+"|출장|"+m.hospTo;(grp[key]=grp[key]||{d:m.hospFrom,end:m.hospTo,l:"출장 기간",k:"trip",who:[]}).who.push(nm);}
+    put(m.outDate,"출국"+(m.outNo?" "+m.outNo:""),"fly",nm);
+    put(m.retDate,"귀국"+(m.retNo?" "+m.retNo:""),"fly",nm);
+  });
+  Object.values(grp).forEach(g=>ev.push(g));
+  const dated=ev.filter(e=>e.d).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0), undated=ev.filter(e=>!e.d);
+  return {dated,undated};
+}
+function mcPrep(m){
+  const reg=m.regStatus==="early"?["조기등록","on"]:m.regStatus==="regular"?["정규등록","on"]:["등록 전",""];
+  const abs=m.title?[(m.ptype==="oral"?"구연":"포스터")+" 초록","on"]:["초록 없음",""];
+  const items=[reg,abs,[m.hospFrom&&m.hospTo?"출장 "+fmtShort(m.hospFrom)+"–"+fmtShort(m.hospTo):"출장 미입력",m.hospFrom&&m.hospTo?"on":""],
+    [flightText(m)?"항공 입력":"항공 미입력",flightText(m)?"on":""],[m.hotel?"숙소 입력":"숙소 미입력",m.hotel?"on":""]];
+  const done=items.filter(x=>x[1]).length;
+  return `<div class="mc-prow"><span class="pname">${esc(String(m.name||""))}</span><span class="mc-n mono">${done}/5</span>
+    ${items.map(([t,on])=>`<span class="mc-tag${on?" on":""}">${esc(t)}</span>`).join("")}</div>`;
+}
+function buildMgmtCards(){
+  const host=$("#mcards"); if(!host)return;
+  if(!dbChecked){host.innerHTML='<p class="mc-empty">팀 공유 연결 중…</p>';return;}
+  const ids=Object.keys(ATT).filter(id=>(ATT[id]||{}).status==="going");
+  const confs=CONFS.filter(c=>ids.includes(c.id)).sort((a,b)=>pd(a.start)-pd(b.start));
+  const tbas=TBA.filter(t=>ids.includes(t.id));
+  if(!confs.length&&!tbas.length){host.innerHTML='<p class="mc-empty">아직 참가로 체크한 학회가 없습니다 — 학회를 눌러 상세 팝업에서 ‘참가’를 고르면 여기에 관리카드가 생깁니다.</p>';return;}
+  let html="";
+  confs.forEach(c=>{
+    const mem=MEMBERS[c.id]||[];
+    const {dated,undated}=mcEvents(c,mem);
+    const next=dated.find(e=>dday(e.end||e.d)>=0&&e.k!=="info");
+    const d0=dday(c.start), dEnd=dday(c.end);
+    const rows=dated.map(e=>{
+      const n=dday(e.d), past=dday(e.end||e.d)<0, isNext=e===next;
+      const chip=past?`<span class="chip-d done">${e.k==="dl"?"마감":"지남"}</span>`
+        :`<span class="chip-d ${e.k==="dl"?(n<=30?"crit":n<=90?"warn":""):""}">${n<0?"진행 중":mcDay(n)}</span>`;
+      return `<div class="mc-ev k-${e.k}${past?" past":""}${isNext?" next":""}"><span class="d mono">${fmtShort(e.d)}${e.end&&e.end!==e.d?"–"+fmtShort(e.end):""}</span>
+        <span class="l">${esc(e.l)}${e.who?` <span class="who">${esc(e.who.join(", "))}</span>`:""}</span>${chip}</div>`;
+    }).join("")+undated.map(e=>`<div class="mc-ev na"><span class="d">미정</span><span class="l">${esc(e.l)} <span class="who">· ${esc(e.na)}</span></span></div>`).join("");
+    html+=`<article class="mcard c-${c.cat}" data-id="${c.id}" tabindex="0" aria-label="${esc(c.acro)} 관리카드 — 눌러서 상세 편집">
+      <div class="mc-head"><div><div class="mc-acro">${esc(c.acro)}</div><div class="mc-full">${esc(c.full)}</div></div>
+        <span class="mc-dday mono">${dEnd<0?"종료":d0<=0?"진행 중":"D-"+d0}</span></div>
+      <div class="mc-facts">
+        <span><b>${esc(c.dateKo)}</b>${c.hybrid?' <span class="hybrid">하이브리드</span>':""}</span>
+        <span>${c.flag} ${esc(c.city)}, ${esc(c.country)}</span>
+        <span class="venue">${c.venue?esc(c.venue):'<span class="no">베뉴 미공지</span>'}</span>
+      </div>
+      ${next?`<div class="mc-next">다음 할 일 · <b>${esc(next.l)}</b> ${fmt(next.d)} <span class="mono">${dday(next.d)<0?"진행 중":mcDay(dday(next.d))}</span></div>`:""}
+      <div class="mc-sec"><span class="slabel">주요 일정</span>${rows}</div>
+      <div class="mc-sec"><span class="slabel">준비 현황${mem.length?` · ${mem.length}명`:""}</span>
+        ${mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — 카드를 눌러 ① 참가자를 추가하세요.</div>'}</div>
+      <div class="mc-foot"><a class="linkbtn" href="${c.url}" target="_blank" rel="noopener">공식 사이트 ↗</a>
+        <span class="statuspill ${c.status==="ok"?"ok":"part"}">${c.status==="ok"?"일정 확정":"일부 미정"}</span>
+        <span class="mc-edit">상세 편집 →</span></div>
+    </article>`;
+  });
+  tbas.forEach(t=>{
+    const mem=MEMBERS[t.id]||[];
+    html+=`<article class="mcard c-${t.cat}" data-id="${t.id}" tabindex="0" aria-label="${esc(t.acro)} 관리카드 — 눌러서 상세 편집">
+      <div class="mc-head"><div><div class="mc-acro">${esc(t.acro)}</div><div class="mc-full">2027 일정 미발표</div></div>
+        <span class="mc-dday mono">미정</span></div>
+      <div class="mc-desc">${esc(t.txt)}</div>
+      <div class="mc-sec"><span class="slabel">준비 현황${mem.length?` · ${mem.length}명`:""}</span>
+        ${mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — 카드를 눌러 ① 참가자를 추가하세요.</div>'}</div>
+      <div class="mc-foot"><a class="linkbtn" href="${t.url}" target="_blank" rel="noopener">공식 사이트 ↗</a><span class="mc-edit">상세 편집 →</span></div>
+    </article>`;
+  });
+  host.innerHTML=html;
+}
+$("#mcards").addEventListener("click",e=>{
+  if(e.target.closest("a"))return;
+  const card=e.target.closest(".mcard"); if(card)openModal(card.dataset.id);
+});
+$("#mcards").addEventListener("keydown",e=>{
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  const card=e.target.closest(".mcard"); if(card&&e.target===card){e.preventDefault();openModal(card.dataset.id);}
+});
+
 /* ---------- detail modal ---------- */
 function openModal(id){
   const c=CONFS.find(x=>x.id===id), t=TBA.find(x=>x.id===id);
@@ -332,6 +421,7 @@ function refreshTeamUI(){
   const el=document.querySelector("#modal .team[data-conf]");
   if(el&&!el.classList.contains("editing"))renderTeamBlock(el);
   updateRowBadges();
+  buildMgmtCards();
 }
 const REG_OPTS=[["","미등록"],["early","조기등록 완료"],["regular","정규등록 완료"]];
 const SEC_EMPTY='<div class="gmsg">① 참가자 섹션에서 먼저 추가하세요.</div>';
