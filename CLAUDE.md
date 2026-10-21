@@ -34,6 +34,8 @@ git push origin main                            # = 배포
   갱신이 덮어쓰지 않는다) · 사용자 입력 `esc()` 이스케이프. 고치기 전에 아티팩트판과 의도를 대조할 것.
 - **학회 데이터(CONFS/TBA)는 data.js에만** — 갱신은 이 파일 교체로 하고 필드 구조는 바꾸지 않는다
   (id/cat/acro/full/start/end/dateKo/city/country/flag/venue/hybrid/status/scale/url/dl).
+- **배포 때 index.html 의 `styles.css?v=`·`data.js?v=`·`app.js?v=` 를 새 버전으로 올린다** — Pages 는
+  max-age=600 이라 안 올리면 브라우저(특히 CV 대시보드 iframe)가 옛 파일을 계속 쓴다(2026-10-21 v1.2.1).
 - **DB 타임스탬프는 JS epoch ms(bigint)** — 아티팩트판과 같다. timestamptz로 바꾸면 정렬·표시가 어긋난다.
 
 ## git 운영 (Claude 전담 — 사용자는 말로만 지시한다)
