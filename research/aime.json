@@ -1,0 +1,331 @@
+{
+ "id": "aime",
+ "checked": "2026-10-22",
+ "overview": {
+  "name": "AIME 2027 — 25th International Conference on Artificial Intelligence in Medicine",
+  "dates": {
+   "start": "2027-07-05",
+   "end": "2027-07-08"
+  },
+  "city": "Amsterdam",
+  "country": "Netherlands",
+  "venue": "본회의: KIT Royal Tropical Institute (Queen Máxima Hall, 포스터·커피는 Marble Hall) / 워크숍·튜토리얼: Vrije Universiteit Amsterdam Computer Science Building(NU Building)",
+  "address": "KIT: Mauritskade 64, 1092 AD Amsterdam (KIT 공식 연락처 기준, 일부 행사 페이지는 63 표기) / VU: Amsterdam Zuid 캠퍼스(De Boelelaan)",
+  "format": "대면(in person) 행사. 하이브리드 안내 없음; Journal-first 발표도 최소 1인 암스테르담 현장 참석 요구",
+  "organizer": "AIME 학회(Society for Artificial Intelligence in Medicine) 시리즈; 현지 주관 Amsterdam UMC·Vrije Universiteit Amsterdam (General co-chairs Iacopo Vagliano, Aneta Lisowska; Scientific chair Szymon Wilk)",
+  "scale": "2027 규모 미공지. 참고: AIME 2025(Pavia)는 311편 투고 중 full 49편·short 81편 채택",
+  "proceedings": "Springer Lecture Notes in Artificial Intelligence(LNAI, LNCS 하위 시리즈); 우수 논문은 Elsevier 'Artificial Intelligence in Medicine' 확장판 초청 가능",
+  "note": "일정: 7/5 Doctoral Consortium·튜토리얼·환영 리셉션, 7/6–7 본회의(7/6 갈라 디너), 7/8 워크숍. 플래너의 날짜·KIT 정보는 맞지만 7/5 튜토리얼·7/8 워크숍은 KIT가 아닌 VU 캠퍼스(Amsterdam Zuid)에서 열림. 기조연설: Mihaela van der Schaar, Maria-Esther Vidal, Bram van Ginneken."
+ },
+ "deadlines": [
+  {
+   "label": "투고 시스템(EasyChair) 오픈",
+   "date": "2026-11-02",
+   "status": "confirmed",
+   "note": "CFP 본문에는 'November 1 이후 오픈'으로도 표기",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "초록 등록 마감 (250단어 이내)",
+   "date": "2027-01-31",
+   "status": "confirmed",
+   "note": "AoE 기준. 초록 먼저 등록해야 본문 업로드 가능. 2026년은 2026-02-10이었음",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "논문(Full/Short/Demo) 제출 마감",
+   "date": "2027-02-07",
+   "status": "confirmed",
+   "note": "AoE 기준, 초록 마감 1주 뒤",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "워크숍 제안서 마감",
+   "date": "2027-02-28",
+   "status": "confirmed",
+   "note": "AoE. 채택 통보 2027-03-07. Workshop/Tutorial chair Ameen Abu-Hanna",
+   "source": "https://aime27.aimedicine.info/call-for-workshops-tutorials/"
+  },
+  {
+   "label": "AIME Rising Star 추천 마감",
+   "date": "2027-03-01",
+   "status": "confirmed",
+   "note": "랩을 이끄는 초기 경력 연구자 대상, Martin Michalowski·Gregor Štiglic에게 이메일 추천. 세부 기준은 추후 공지",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "워크숍 채택 통보",
+   "date": "2027-03-07",
+   "status": "confirmed",
+   "note": "AoE",
+   "source": "https://aime27.aimedicine.info/call-for-workshops-tutorials/"
+  },
+  {
+   "label": "튜토리얼 제안서 마감",
+   "date": "2027-03-15",
+   "status": "confirmed",
+   "note": "AoE. 등록자 5명 미만이면 취소·축소 가능",
+   "source": "https://aime27.aimedicine.info/call-for-workshops-tutorials/"
+  },
+  {
+   "label": "튜토리얼 채택 통보",
+   "date": "2027-03-22",
+   "status": "confirmed",
+   "note": "AoE",
+   "source": "https://aime27.aimedicine.info/call-for-workshops-tutorials/"
+  },
+  {
+   "label": "Doctoral Consortium 제출 마감",
+   "date": "2027-03-31",
+   "status": "confirmed",
+   "note": "박사과정생 연구계획 2,000–2,500단어. 통보 2027-04-27, 최종본 2027-05-11",
+   "source": "https://aime27.aimedicine.info/call-for-dc/"
+  },
+  {
+   "label": "Journal-first 트랙 제안서 마감",
+   "date": "2027-04-04",
+   "status": "confirmed",
+   "note": "2025-10-01~2027-03-31 저널 채택 논문 대상, 2쪽 LNCS 제안서. 통보 2027-04-18. 프로시딩에는 미수록",
+   "source": "https://aime27.aimedicine.info/call-for-papers/call-for-jf/"
+  },
+  {
+   "label": "Journal-first 채택 통보",
+   "date": "2027-04-18",
+   "status": "confirmed",
+   "note": "AoE",
+   "source": "https://aime27.aimedicine.info/call-for-papers/call-for-jf/"
+  },
+  {
+   "label": "논문 채택 통보",
+   "date": "2027-04-19",
+   "status": "confirmed",
+   "note": "2026년도 같은 날(04-19)이었음",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "Doctoral Consortium 채택 통보",
+   "date": "2027-04-27",
+   "status": "confirmed",
+   "note": "AoE",
+   "source": "https://aime27.aimedicine.info/call-for-dc/"
+  },
+  {
+   "label": "학생 여행 지원금(등록비 할인) 신청 마감",
+   "date": "2027-04-30",
+   "status": "confirmed",
+   "note": "채택 논문 저자인 학생, 현장 참석 필수. aime27@amsterdamumc.nl로 채택 통보·학생 증빙·150단어 사유서 제출. 결과 통보 2027-05-02",
+   "source": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "label": "카메라레디 제출 마감",
+   "date": "2027-05-02",
+   "status": "confirmed",
+   "note": "AoE. 같은 날 학생 지원금 결과 통보",
+   "source": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "label": "조기 등록(Early Bird) 마감",
+   "date": "2027-05-10",
+   "status": "confirmed",
+   "note": "이후 Late/On-site 요금 적용",
+   "source": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "label": "저자 등록 마감 (논문당 Full 등록 1건)",
+   "date": "2027-05-10",
+   "status": "confirmed",
+   "note": "학생 등록으로는 논문 커버 불가, Full 1건당 논문 1편만 인정. 미등록 시 프로시딩 미수록",
+   "source": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "label": "Doctoral Consortium 최종본 마감",
+   "date": "2027-05-11",
+   "status": "confirmed",
+   "note": "AoE",
+   "source": "https://aime27.aimedicine.info/call-for-dc/"
+  },
+  {
+   "label": "등록 취소 마감 (€100 수수료)",
+   "date": "2027-06-01",
+   "status": "confirmed",
+   "note": "이후 취소·노쇼는 전액 부과; 등록 취소 시 해당 논문 프로시딩 제외. 대리 참석자 변경은 언제든 가능",
+   "source": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "label": "온라인 등록 마감",
+   "date": "2027-07-01",
+   "status": "confirmed",
+   "note": "Late/현장 등록은 보장되지 않으며 수용 인원에 따라 추후 결정",
+   "source": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "label": "비자 초청장 요청",
+   "date": null,
+   "status": "tba",
+   "note": "명시 마감 없음 — 등록 완료 후 '가능한 빨리' 요청. 한국 여권은 무비자라 보통 불필요",
+   "source": "https://aime27.aimedicine.info/travel/visa-and-entry-requirements/"
+  },
+  {
+   "label": "공식 호텔 블록 예약 마감",
+   "date": null,
+   "status": "tba",
+   "note": "2027 사이트에 지정 호텔·블록 안내 없음",
+   "source": "https://aime27.aimedicine.info/travel/"
+  },
+  {
+   "label": "프로그램(세션 일정) 공개",
+   "date": null,
+   "status": "tba",
+   "note": "기조연설자 3명만 공개, 상세 프로그램 미공개",
+   "source": "https://aime27.aimedicine.info/keynote-speakers/"
+  }
+ ],
+ "registration": {
+  "fees": [
+   {
+    "category": "Full registration",
+    "early": "700",
+    "regular": "800 (Late/On-site)",
+    "onsite": "800 (보장 안 됨)",
+    "currency": "EUR"
+   },
+   {
+    "category": "Student registration",
+    "early": "500",
+    "regular": "600 (Late/On-site)",
+    "onsite": "600 (보장 안 됨)",
+    "currency": "EUR"
+   },
+   {
+    "category": "Tutorials & DC (1일)",
+    "early": "100",
+    "regular": "150 (Late/On-site)",
+    "onsite": "150 (보장 안 됨)",
+    "currency": "EUR"
+   },
+   {
+    "category": "Workshops (1일)",
+    "early": "100",
+    "regular": "150 (Late/On-site)",
+    "onsite": "150 (보장 안 됨)",
+    "currency": "EUR"
+   }
+  ],
+  "basis": "2027 공식",
+  "notes": "요금은 Early Bird(~2027-05-10)와 Late/On-site 두 단계뿐이며 별도 'regular' 구간은 없음. Full·Student 등록에는 구두·포스터 세션, 커피, 점심, 환영 칵테일이 포함되고 튜토리얼·워크숍은 따로 등록. 회원 할인 안내는 없음. 등록·비자 문의는 events@amsterdamumc.nl.",
+  "source": "https://aime27.aimedicine.info/registration/"
+ },
+ "submission": {
+  "types": "Full 논문 최대 10쪽, Short 논문 최대 5쪽(예비·late-breaking 결과), Demo 논문 최대 5쪽(쪽수에 참고문헌 포함). 이 밖에 Journal-first(2쪽 제안서)와 Doctoral Consortium(2,000–2,500단어) 트랙",
+  "format": "Springer LNCS 양식(LaTeX/Word, Overleaf 템플릿)으로 EasyChair에 제출. 초록(250단어)을 먼저 내고 1주 내 본문을 올림. 투고 시 학생 여부를 표시하고, AI 보조 도구를 썼다면 참고문헌 앞에 사용 선언문을 넣어야 함",
+  "review": "2027 CFP에는 single/double-blind 여부가 적혀 있지 않음(2026 CFP도 동일) — 익명화가 필요한지 조직위에 확인 권장",
+  "presentation": "2027 발표 지침은 아직 없음. 2026 기준(참고): 긴 구두 발표 15분+질의 5분, 짧은 구두 발표 9분+질의 3분. e-포스터는 가로형 16:9 단일 페이지 PDF(1920×1080 이상 권장, 20MB 이하)를 55–75인치 화면에 띄움. 2027 포스터는 KIT Marble Hall에 전시",
+  "publication": "Full·Short·Demo 채택 논문은 모두 Springer LNAI 프로시딩에 실리고, 우수 논문은 AIIM 저널 확장판에 초청될 수 있음. Journal-first 논문은 프로시딩에 들어가지 않고 프로그램에 초록과 링크만 실림",
+  "source": "https://aime27.aimedicine.info/call-for-papers/"
+ },
+ "travel": {
+  "entry": "한국 여권은 솅겐 단기 무비자 대상이라 180일 중 90일까지 비자 없이 머물 수 있음. ETIAS는 한국을 대상국에 포함하고 있지만 2026-10-22 현재 공식 사이트 기준 '운영 전'이며 시작일도 발표되지 않음(시행 시 수수료 EUR 20). EES(출입국 생체정보 등록)는 2026-04-10부터 전면 운영 중이므로 입국 심사 때 지문·안면 등록을 예상할 것.",
+  "entry_source": "https://travel-europe.europa.eu/etias_en",
+  "airport": "Amsterdam Schiphol(AMS) 공항. 도심까지 약 20분 거리",
+  "transport": "공항에서 기차가 주간 5–10분 간격으로 다니며 Centraal 또는 Zuid역으로 감. KIT는 Centraal에서 트램 14번(Flevopark 방면)을 타고 Mauritskade에서 내리거나, 메트로 54 → Weesperplein → 트램 19번으로 감. VU(워크숍·튜토리얼)는 메트로 52번으로 Amsterdam Zuid역까지 가서 도보 약 10분이며 트램 24번 De Boelelaan/VU 정류장도 이용 가능",
+  "hotels": "2027 사이트에 공식·추천 호텔이나 단체 예약 블록 안내가 없음. 7월 성수기이므로 직접 일찍 예약하는 편이 좋고, 7/5·7/8 일정이 있다면 KIT(동부 Oosterpark)와 VU(남부 Zuid) 사이 동선을 함께 고려",
+  "local": "대중교통은 비접촉 카드나 휴대폰으로 태그인·태그아웃하며 하루 요금 상한은 €10.50(조직위 안내 기준). GVB·NS 경로 안내가 지도앱보다 정확하고, I amsterdam City Card도 쓸 수 있음. Centraal역 뒤 IJ 페리는 무료. 렌터카는 권하지 않음. 7월 기후는 이번 조사에서 공식 수치를 확인하지 못함",
+  "source": "https://aime27.aimedicine.info/travel/"
+ },
+ "support": {
+  "text": "학생 여행 지원금은 등록비 일부를 할인해 주는 방식이며 채택 논문 저자인 학생이 현장 참석할 때만 받을 수 있음(신청 마감 04-30, 결과 05-02). DC에 채택된 학생은 DC·본회의 등록비 지원을 제안받음. 상은 Mario Stefanelli(최우수 학생 논문), Marco Ramoni(최우수 일반 논문), AIME Rising Star가 있음. 학생 자원봉사·보육·장애인 접근성 안내는 2027 사이트에 없음.",
+  "source": "https://aime27.aimedicine.info/registration/"
+ },
+ "tips": [
+  "초록 등록(01-31)을 하지 않으면 본문을 낼 수 없고, 본문 마감(02-07)은 2027년 설 연휴 무렵이므로 1월 중 초록 등록과 원고 마무리를 끝낼 것.",
+  "참고문헌 포함 Full 10쪽·Short 5쪽 제한이라 임상 데이터 논문은 Short 트랙도 검토할 만함. LNCS 양식으로 처음부터 작성 권장.",
+  "논문마다 Full(비학생) 등록 1건이 필요함. 여러 편이 채택되면 팀 내 Full 등록자를 논문 수만큼 확보해 05-10 전에 등록할 것.",
+  "이미 저널에 채택된 치매·정신건강 AI 논문(2025-10 이후 채택)은 Journal-first 트랙(04-04)으로 발표할 수 있음. 단 프로시딩에는 실리지 않음.",
+  "7/5 튜토리얼·DC와 7/8 워크숍은 VU(Zuid), 본회의는 KIT(동부)라서 숙소는 두 곳 사이 메트로·트램 동선을 기준으로 고를 것.",
+  "익명 심사 여부가 명시되지 않았으므로 제출 전 aime27@amsterdamumc.nl에 문의하거나 EasyChair 안내를 확인할 것.",
+  "ETIAS는 아직 운영 전이지만 2027년 7월 전에 시작될 수 있음. 출국 전 travel-europe.europa.eu에서 시행 여부를 다시 확인할 것.",
+  "e-포스터(2026 기준 16:9 가로형 PDF)일 수 있으니 포스터 발표가 배정되면 인쇄 전에 2027 지침부터 확인할 것."
+ ],
+ "sources": [
+  {
+   "title": "AIME 2027 공식 홈",
+   "url": "https://aime27.aimedicine.info/"
+  },
+  {
+   "title": "AIME 2027 Call for Papers",
+   "url": "https://aime27.aimedicine.info/call-for-papers/"
+  },
+  {
+   "title": "AIME 2027 Call for Journal-first Papers",
+   "url": "https://aime27.aimedicine.info/call-for-papers/call-for-jf/"
+  },
+  {
+   "title": "AIME 2027 Call for Doctoral Consortium",
+   "url": "https://aime27.aimedicine.info/call-for-dc/"
+  },
+  {
+   "title": "AIME 2027 Call for Workshops & Tutorials",
+   "url": "https://aime27.aimedicine.info/call-for-workshops-tutorials/"
+  },
+  {
+   "title": "AIME 2027 Registration",
+   "url": "https://aime27.aimedicine.info/registration/"
+  },
+  {
+   "title": "AIME 2027 Venue",
+   "url": "https://aime27.aimedicine.info/venue/"
+  },
+  {
+   "title": "AIME 2027 How to get there",
+   "url": "https://aime27.aimedicine.info/travel/"
+  },
+  {
+   "title": "AIME 2027 Visa and Entry Requirements",
+   "url": "https://aime27.aimedicine.info/travel/visa-and-entry-requirements/"
+  },
+  {
+   "title": "AIME 2027 Organization",
+   "url": "https://aime27.aimedicine.info/organization/"
+  },
+  {
+   "title": "AIME 2027 Keynote Speakers",
+   "url": "https://aime27.aimedicine.info/keynote-speakers/"
+  },
+  {
+   "title": "AIME 2026 Call for Papers (전년 일정 참고)",
+   "url": "https://aime26.aimedicine.info/call-for-papers/"
+  },
+  {
+   "title": "AIME 2026 Oral Presentation Instructions",
+   "url": "https://aime26.aimedicine.info/oral-instructions/"
+  },
+  {
+   "title": "AIME 2026 Poster/e-Poster Guidelines",
+   "url": "https://aime26.aimedicine.info/call-for-papers/poster-e-poster-guidelines/"
+  },
+  {
+   "title": "AIME 2025 Proceedings Part II (Springer, 규모 참고)",
+   "url": "https://link.springer.com/book/9783031958403"
+  },
+  {
+   "title": "KIT Royal Tropical Institute 연락처(주소)",
+   "url": "https://www.kit.nl/contact/"
+  },
+  {
+   "title": "EU 공식 ETIAS 사이트",
+   "url": "https://travel-europe.europa.eu/etias_en"
+  },
+  {
+   "title": "EU 공식 ETIAS — Who should apply (South Korea 포함)",
+   "url": "https://travel-europe.europa.eu/etias/who-should-apply_en"
+  },
+  {
+   "title": "European Commission — EES와 ETIAS 차이 (EES 2026-04-10 전면 운영)",
+   "url": "https://home-affairs.ec.europa.eu/news/main-differences-between-ees-and-etias-what-travellers-need-know-2026-04-28_en"
+  },
+  {
+   "title": "European Commission — Schengen visa policy (90/180일)",
+   "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
+  }
+ ]
+}

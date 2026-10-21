@@ -1,0 +1,105 @@
+{
+ "id": "ipa",
+ "checked": "2026-10-22",
+ "overview": {
+  "name": "2027 IPA International Congress (제26차 국제노인정신의학회 학술대회, International Psychogeriatric Association)",
+  "dates": {"start": "2027-05-28", "end": "2027-05-30"},
+  "city": "Padova (Padua)",
+  "country": "Italy",
+  "venue": "Padova Congress (Padua Congress Center)",
+  "address": "Via Niccolò Tommaseo 59, 35131 Padova (PD), Veneto, Italy",
+  "format": "전면 대면(all presentations in person). 5/28 오전 Pre-Congress Workshop + 저녁 개회식·기조강연·Welcome Reception, 5/29–30 Plenary·심포지엄·자유연제(7개 병행실)·포스터, 5/30 오후 Site Visit.",
+  "organizer": "International Psychogeriatric Association (IPA, 미국 Milwaukee 사무국, info@ipa-online.org). 2027 위원회 명단은 아직 '준비 중'.",
+  "scale": "공식 참가자 수 미공지. 프로그램 초안상 심포지엄·자유연제 7개 병행실, 워크숍실 100–237석 규모(중형 국제학회).",
+  "proceedings": "2027 초록 출판 방식 미공지. 2025년(Kanazawa) 초록은 International Psychogeriatrics 37권 5호 Supplement로 출판, 2026년(Leiden)은 Fourwaves 온라인 Abstract Library로 공개.",
+  "note": "플래너의 '일정 미공지'는 갱신 필요: 2027-05-28~30 확정(예년 여름–가을보다 이른 늦봄). 공식 테마로 'The Future of Psychogeriatrics: Mind, Brain and Wellbeing'이 행사 페이지에 게시됨."
+ },
+ "deadlines": [
+  {"label": "초록 제출 사이트 개설", "date": "2026-08-14", "status": "confirmed", "note": "Fourwaves 'Abstract Timeline' 기준(사이트 'Dates' 칸은 8/13로 표기).", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "Pre-Congress Workshop(반일) 제안 마감", "date": "2026-11-01", "status": "confirmed", "note": "미 중부시간(CT) 23:59 = 한국시간 11/2(월) 14:59. 스폰서/재정 확보 필수, 일반 초록 섹션으로 제출.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "심포지엄 초록 마감", "date": "2026-11-01", "status": "confirmed", "note": "CT 23:59(한국 11/2 14:59). 전체 개요 초록(~350단어)+개별 발표 초록 전부 필요. 2026년(Leiden)은 2025-12-17이었으니 올해는 약 6주 빠름.", "source": "https://www.ipa-online.org/news-and-issues/ipa-2027-ipa-padua-congress---call-for-symposium-abstracts"},
+  {"label": "Free/Oral·포스터 초록 마감", "date": "2026-12-15", "status": "confirmed", "note": "CT 23:59(한국 12/16 14:59). 같은 페이지의 마감표에는 'December 15, 2027'로 적혀 있으나 타임라인은 2026이라 오타로 보임. 사무국 확인 권장.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "워크숍·심포지엄 심사 결과", "date": "2026-12-16", "status": "confirmed", "note": "제출 저자 이메일로 통보. 심포지엄 탈락 시 Free/Oral로 전환 제안될 수 있음.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "Free/Oral·포스터 심사 결과", "date": "2027-01-26", "status": "confirmed", "note": "'Review Timeline' 기준이며, 통보는 이 날짜 직후.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "Late-Breaking 초록 접수 시작", "date": "2027-02-15", "status": "confirmed", "note": "", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "Late-Breaking 초록 마감", "date": "2027-03-15", "status": "confirmed", "note": "사이트 'Dates' 칸은 전체 제출기간 종료를 2027-04-15 CEST로 표기해 불일치.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "IPA Junior Research Awards 원고 마감", "date": null, "status": "expected", "note": "2027 공고 전. 2026년 마감은 2026-05-01(학회 2개월 전, 이메일 제출).", "source": "https://www.ipa-online.org/events/awards/ipa-jr-research-awards-submissions"},
+  {"label": "사전등록(Early Bird) 마감", "date": null, "status": "expected", "note": "2027 등록 미오픈. 2026년은 2026-06-01까지 early rate, 6/2부터 인상(학회 1개월 전).", "source": "https://www.ipa-online.org/news-and-issues/update-congress-registration-open-now"},
+  {"label": "발표자 등록(참석 확정)", "date": null, "status": "tba", "note": "채택 후 등록해야 세션이 배정된다고 명시돼 있으나 마감일은 미공지.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "일반 등록 마감", "date": null, "status": "expected", "note": "2026년은 온라인 등록 마감 후 현장등록(onsite rate)만 가능했음. 2027 미공지.", "source": "https://ipa2025congress.my.canva.site/ic26"},
+  {"label": "호텔 블록 마감", "date": null, "status": "tba", "note": "2027 'Hotel Options' 페이지 'Launching Soon'.", "source": "https://ipa2025congress.my.canva.site/ipa2027congress"},
+  {"label": "초청장(Invitation letter) 신청", "date": null, "status": "tba", "note": "공지 없음. 한국 여권은 무비자라 필요 시 info@ipa-online.org로 요청.", "source": "https://event.fourwaves.com/ic27/pages"},
+  {"label": "프로그램 발표", "date": null, "status": "tba", "note": "일자별 시간표 골격은 게시됐고, 세부 세션·연자는 미공지.", "source": "https://ipa2025congress.my.canva.site/ipa2027congress"},
+  {"label": "학회 기간(Pre-Congress Workshop 포함)", "date": "2027-05-28", "status": "confirmed", "note": "2027-05-28~30. 5/28 오전 워크숍(09–12시), 17:30 개회식.", "source": "https://event.fourwaves.com/ic27/pages"}
+ ],
+ "registration": {
+  "fees": [
+   {"category": "IPA 회원", "early": "$383", "regular": "미확인", "onsite": "$632", "currency": "USD($ 표기)"},
+   {"category": "비회원", "early": "$599 (1년 회원권 포함 시 $557)", "regular": "미확인", "onsite": "$852", "currency": "USD($ 표기)"},
+   {"category": "회원 학생/은퇴/간호사", "early": "$247", "regular": "미확인", "onsite": "$486", "currency": "USD($ 표기)"},
+   {"category": "비회원 학생/은퇴/간호사", "early": "$407 (회원권 포함 $383)", "regular": "미확인", "onsite": "$632", "currency": "USD($ 표기)"},
+   {"category": "Early Career Network", "early": "$231", "regular": "미확인", "onsite": "$492", "currency": "USD($ 표기)"},
+   {"category": "저·중소득국(LMIC)", "early": "미표기", "regular": "미확인", "onsite": "$486", "currency": "USD($ 표기)"},
+   {"category": "1일 등록(회원/비회원)", "early": "$226 / $341", "regular": "미확인", "onsite": "$464 / $535", "currency": "USD($ 표기)"},
+   {"category": "단체 10인 이상(회원/비회원, 1인)", "early": "$331 / $546", "regular": "미확인", "onsite": "미표기", "currency": "USD($ 표기)"},
+   {"category": "동반자(Guest)", "early": "$121", "regular": "미확인", "onsite": "$145", "currency": "USD($ 표기)"}
+  ],
+  "basis": "2026 기준(참고)",
+  "notes": "2027 등록비는 미공지이고 위 표는 2026 Leiden 기준(early는 IPA 공지, onsite는 2026 행사 페이지). 연회비는 개인 $160/년(2년 $305), 학생·은퇴 $99. 회원 혜택은 International Psychogeriatrics 전자 구독, 학회 할인, APC 20% 할인 등이며, 초록 제출에 회원 자격은 필요 없음.",
+  "source": "https://www.ipa-online.org/news-and-issues/2026-ipa-congress-registration-rates-announced"
+ },
+ "submission": {
+  "types": "반일 Pre-Congress Workshop(스폰서 필요), 심포지엄(90분), Free/Oral Communication(10–12분), 포스터, Late-Breaking 초록.",
+  "format": "초록당 350단어 이내, Title·Authors·Introduction·Objective·Method·Results·Conclusion·Keywords 구조. Word 원고 기준 Times New Roman 12pt, 영어만 허용. 상품명 금지(일반명만), 그림·표는 초록집 미수록.",
+  "review": "Scientific Committee가 발표 형식을 최종 결정하며 심포지엄을 Free/Oral로 전환할 수 있음. 상호작용형·국제공동 심포지엄 우선. 마감 후 수정 불가, 오탈자는 그대로 초록집에 실림.",
+  "presentation": "심포지엄 구성은 Fourwaves는 발표 2–4편(각 20–25분), IPA 뉴스는 3–5편으로 서로 다름. 포스터는 지정 세션에 포스터 옆에서 질의응답하며, 크기는 미공지. 모든 발표는 대면.",
+  "publication": "2027 출판 방식은 미공지(사이트에 'abstract book' 언급). 2025년은 International Psychogeriatrics Supplement, 2026년은 온라인 Abstract Library로 공개.",
+  "source": "https://event.fourwaves.com/ic27/pages"
+ },
+ "travel": {
+  "entry": "한국 여권은 솅겐 지역에 무비자로 180일 중 90일까지 체류 가능하며, 여권은 출국 예정일 이후 3개월 이상 남아 있어야 함. ETIAS는 2026-10-22 현재 미시행(신청 접수 없음, 시행 수개월 전 공지, 수수료 EUR 20 예정). EES는 2026-04-10부터 전면 운영 중이라 첫 입국 때 얼굴·지문을 등록함.",
+  "entry_source": "https://travel-europe.europa.eu/en/etias",
+  "airport": "가장 가까운 공항은 Venice Marco Polo(VCE)로 행사장까지 약 30분. Treviso·Verona 공항도 이용 가능하고, Bologna(BLQ)에서는 Padova까지 기차로 약 1시간 30분.",
+  "transport": "Padova역에서 행사장까지 약 500m로 도보 또는 버스 3·10·25번, 택시 이용. 장거리 버스 터미널도 역 옆에 있음. Venezia·Vicenza까지 기차 약 20분, Milano 약 2시간.",
+  "hotels": "2027 IPA 'Hotel Options' 페이지는 아직 준비 중. 행사장이 역과 구시가 사이 도보권이라 역 주변 숙소가 동선상 유리함.",
+  "local": "Padova는 숙박세(imposta di soggiorno)를 1박 단위, 연속 5박까지 부과함(2023년 시 자료 기준 호텔 €1–3, 현행 금액은 숙소 확인). 전압 230V/50Hz, 콘센트 C/F/L형이라 한국 플러그(C/F)는 대개 맞지만 L형 전용 콘센트에 대비해 어댑터를 권장. 학회 기간은 5월 말 늦봄.",
+  "source": "https://www.padovacongress.it/informazioni-utili/"
+ },
+ "support": {
+  "text": "IPA Junior Research Awards는 학위 후 5년 이내이고 Assistant Professor 이하인 연구자의 미발표 원저가 대상. 수상 시 여비·숙박 USD 1,500, 등록비 면제, 1년 회원권을 받고 학회에서 대면 발표해야 함(2026 기준, 2027 공고 대기). 초기 경력자(경력 5년 미만)는 Early Career Network(ECN) 등록 요율 대상. 별도 travel grant 공지는 없음.",
+  "source": "https://www.ipa-online.org/events/awards/ipa-jr-research-awards-submissions"
+ },
+ "tips": [
+  "심포지엄·워크숍 마감이 2026-11-01 CT(한국 11/2 14:59)로 10일 남음. 개별 발표 초록이 모두 있어야 심사되므로 연자 확정이 급선무.",
+  "심포지엄 편수 규정이 공지마다 2–4편, 3–5편으로 달라서 3–4편으로 꾸리면 양쪽을 모두 충족함. 일본·대만·중국 등 국제 공동 연자와 토론형 구성을 넣으면 우선 선정에 유리.",
+  "Free/Oral·포스터는 12/15(한국 12/16 오후) 마감. 350단어 구조화 초록이며 약물은 상품명 대신 일반명만 쓸 것.",
+  "전원 대면 발표이고 채택 후 등록해야 세션이 배정됨. 5/28–30이 국내 춘계학회·외래 일정과 겹치는지 미리 확인하고 출장을 확보.",
+  "IPA 개인 회원($160/년)이 되면 2026 기준 early 등록비가 $599에서 $383으로 내려가 회비를 거의 상쇄하고 저널 접근도 생김. 전공의·펠로는 ECN·학생 요율을 확인.",
+  "Junior Research Award(2026 마감 5/1, USD 1,500+등록 면제)는 미발표 원고가 조건이라 대상 원고의 투고 시점을 조절해 둘 것.",
+  "VCE 도착 후 Padova역까지 이동하면 행사장은 역에서 500m. 숙소는 역 주변이나 구시가로 잡고, 숙박세는 현장에서 별도 납부.",
+  "ETIAS는 아직 미시행이라 출국 전 travel-europe.europa.eu에서 시행일을 재확인하고, EES 생체등록 때문에 첫 입국 심사는 여유 있게 잡을 것."
+ ],
+ "sources": [
+  {"title": "IPA International Congress (공식 학회 목록)", "url": "https://www.ipa-online.org/events/annual-congress"},
+  {"title": "2027 IPA International Congress 행사 페이지(Canva, IPA 링크)", "url": "https://ipa2025congress.my.canva.site/ipa2027congress"},
+  {"title": "2027 IPA Congress 초록 제출(Fourwaves ic27)", "url": "https://event.fourwaves.com/ic27/pages"},
+  {"title": "IPA 2027 Padua Congress - Call for Symposium Abstracts", "url": "https://www.ipa-online.org/news-and-issues/ipa-2027-ipa-padua-congress---call-for-symposium-abstracts"},
+  {"title": "2026 IPA Leiden Congress 행사 페이지(현장 등록비·장소)", "url": "https://ipa2025congress.my.canva.site/ic26"},
+  {"title": "2026 IPA Congress Registration Rates Announced", "url": "https://www.ipa-online.org/news-and-issues/2026-ipa-congress-registration-rates-announced"},
+  {"title": "2026 Congress Registration - early rate 6/1 마감", "url": "https://www.ipa-online.org/news-and-issues/update-congress-registration-open-now"},
+  {"title": "2026 IPA Leiden Congress - Call for Abstracts", "url": "https://www.ipa-online.org/news-and-issues/announcement-2026-ipa-leiden-congress---call-for-abstracts"},
+  {"title": "Past IPA Congresses (초록집·Supplement 링크)", "url": "https://www.ipa-online.org/events/annual-congress/past-ipa-congresses"},
+  {"title": "IPA Junior Research Awards - Call for Submissions", "url": "https://www.ipa-online.org/events/awards/ipa-jr-research-awards-submissions"},
+  {"title": "IPA Membership Benefits", "url": "https://www.ipa-online.org/membership-in-ipa/benefits"},
+  {"title": "IPA Join (연회비)", "url": "https://www.ipa-online.org/membership-in-ipa/join"},
+  {"title": "IPA Early Career Network", "url": "https://www.ipa-online.org/membership-in-ipa/young-researchers-network"},
+  {"title": "Padova Congress 공식 사이트", "url": "https://www.padovacongress.it/"},
+  {"title": "Padova Congress - Informazioni utili(교통)", "url": "https://www.padovacongress.it/informazioni-utili/"},
+  {"title": "EU 공식 ETIAS 사이트", "url": "https://travel-europe.europa.eu/en/etias"},
+  {"title": "EU 공식 EES FAQ(전면 운영 2026-04-10)", "url": "https://travel-europe.europa.eu/ees/faq"},
+  {"title": "EU Home Affairs - Visa policy(무비자 국가 목록 근거)", "url": "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en"},
+  {"title": "주한 헝가리대사관 - 솅겐 일반정보(한국인 90일 무비자, 여권 3개월)", "url": "https://szoul.mfa.gov.hu/eng/page/general-information"},
+  {"title": "Comune di Padova 위원회 회의록(숙박세, 2023)", "url": "https://padovanet.it/16022023-verbale-ii-commissione"},
+  {"title": "Italy plug types (Wise)", "url": "https://wise.com/us/blog/italy-power-adapter"}
+ ]
+}

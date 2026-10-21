@@ -36,6 +36,9 @@ git push origin main                            # = 배포
   (id/cat/acro/full/start/end/dateKo/city/country/flag/venue/hybrid/status/scale/url/dl).
 - **배포 때 index.html 의 `styles.css?v=`·`data.js?v=`·`app.js?v=` 를 새 버전으로 올린다** — Pages 는
   max-age=600 이라 안 올리면 브라우저(특히 CV 대시보드 iframe)가 옛 파일을 계속 쓴다(2026-10-21 v1.2.1).
+- **학회별 상세 페이지 데이터는 `research/<id>.json` → `python3 tools/build_details.py` → `details.js`** —
+  details.js 를 손으로 고치지 않는다. 공개 정보(공식 사이트·정부 안내)만, 항목마다 출처 URL·status(confirmed/expected/tba).
+  팀원 개인정보는 절대 넣지 않는다(공개 저장소).
 - **DB 타임스탬프는 JS epoch ms(bigint)** — 아티팩트판과 같다. timestamptz로 바꾸면 정렬·표시가 어긋난다.
 
 ## git 운영 (Claude 전담 — 사용자는 말로만 지시한다)

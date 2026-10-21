@@ -1,0 +1,270 @@
+{
+ "id": "vascog",
+ "checked": "2026-10-22",
+ "overview": {
+  "name": "VasCog 2027 — International Society of Vascular Behavioural and Cognitive Disorders 학술대회",
+  "dates": {
+   "start": "2027-11-13",
+   "end": "2027-11-16"
+  },
+  "city": "Singapore",
+  "country": "Singapore",
+  "venue": "미공지 (학회 포스터 배경은 Marina Bay Sands이지만 개최 장소로 발표된 것은 아님)",
+  "address": "미공지",
+  "format": "대면 4일. 2025년 기준 형식: Master Class, Plenary, Symposium, Debate, 그리고 ECI(신진연구자) Master Class",
+  "organizer": "VasCog Society. 2027 현지조직위·PCO는 미공지 (대회 사이트 conference2027.vascog.org는 'coming soon' 상태)",
+  "scale": "2027 미공지. VasCog 2025(Southampton)에는 약 200명 참석 (CCCB 하이라이트 논문 기준)",
+  "proceedings": "초록집 저널 부록 확인 안 됨. 2025 대회는 학회지 Cerebral Circulation – Cognition and Behavior(CCCB)에 하이라이트 논문으로 정리됨 (doi:10.1016/j.cccb.2025.100525)",
+  "note": "날짜(2027-11-13~16)와 도시(Singapore)는 vascog.org 공식 포스터로 확인되어 플래너와 일치. 장소·마감일·등록비는 2026-10-22 기준 모두 미공지. 학회는 격년 개최."
+ },
+ "deadlines": [
+  {
+   "label": "심포지엄/세션 제안",
+   "date": null,
+   "status": "tba",
+   "note": "2027 공고 없음. 2025·2023 사이트에서도 공개 세션 제안 공모는 확인되지 않음.",
+   "source": "https://conference2027.vascog.org/"
+  },
+  {
+   "label": "초록 제출 마감 (일반 구연/포스터)",
+   "date": null,
+   "status": "expected",
+   "note": "2027 미공지. 참고: 2023은 2023-06-07 마감(얼리버드 마감 1주 전, 수시 심사). 2025는 일반 마감일이 기록에 남아 있지 않음. 대회 3~5개월 전 마감을 예상.",
+   "source": "https://web.archive.org/web/20230326182845/https://conference2023.vascog.org/abstract-submission/"
+  },
+  {
+   "label": "초록 채택 통지",
+   "date": null,
+   "status": "expected",
+   "note": "2023·2025 모두 수시(rolling)로 심사해 교신저자에게 이메일 통보. 일찍 낼수록 일찍 결과를 받음.",
+   "source": "https://conference2025.vascog.org/abstract-submission/"
+  },
+  {
+   "label": "Early Career Investigator Award 신청",
+   "date": null,
+   "status": "expected",
+   "note": "별도 마감 없이 초록 제출 시 옵트인(2023·2025). 상위 3편에 상금. 마감은 초록 마감과 같음.",
+   "source": "https://conference2025.vascog.org/abstract-submission/"
+  },
+  {
+   "label": "얼리버드 등록 마감",
+   "date": "2027-09-29",
+   "status": "expected",
+   "note": "추정치. 2025는 2025-08-01(연장 후, 대회 45일 전)에 마감, 2023은 06-14에 마감. 2025와 같은 간격을 적용한 날짜.",
+   "source": "https://web.archive.org/web/20250715193513/https://conference2025.vascog.org/registration/"
+  },
+  {
+   "label": "Late-breaking 포스터 초록 마감",
+   "date": "2027-10-14",
+   "status": "expected",
+   "note": "추정치. 2025는 2025-08-16(연장 후, 대회 30일 전)에 마감했고 포스터만 받음.",
+   "source": "https://web.archive.org/web/20250715193522/https://conference2025.vascog.org/"
+  },
+  {
+   "label": "발표자 등록(등록비 납부)",
+   "date": null,
+   "status": "tba",
+   "note": "채택 초록은 등록하고 등록비를 낸 저자가 발표해야 함(2023·2025 규정). 별도 마감일은 공지되지 않음. 얼리버드 마감 전 등록을 권장.",
+   "source": "https://conference2025.vascog.org/abstract-submission/"
+  },
+  {
+   "label": "온라인 등록 마감",
+   "date": "2027-11-09",
+   "status": "expected",
+   "note": "추정치. 2025는 처음 09-01로 공지했다가 2025-09-11(대회 4일 전)에 마감. 현장등록 정보는 없음.",
+   "source": "https://conference2025.vascog.org/registration/"
+  },
+  {
+   "label": "호텔 예약 마감(공식 블록)",
+   "date": null,
+   "status": "tba",
+   "note": "장소와 숙박 안내가 미공지. 2027년 11월 Singapore에서 ASEAN 정상회의(6일, 약 2,500명, 날짜 미정)가 예정되어 있어 숙박 수요 증가가 예상됨.",
+   "source": "https://www.mfa.gov.sg/newsroom/announcements-and-highlights/invitation-for-proposals-for-sponsorship-of-food-and-drinks--furniture--audio-visual-equipment--event-tokens-and-medical-services-for-high-level-meetings-and-conferences-in-2027/"
+  },
+  {
+   "label": "초청장(Invitation letter)",
+   "date": null,
+   "status": "tba",
+   "note": "공지 없음. 한국 여권은 무비자라서 비자용으로는 필요 없음. 출장 결재에 필요하면 사무국에 요청.",
+   "source": "https://conference2027.vascog.org/"
+  },
+  {
+   "label": "프로그램 공개",
+   "date": null,
+   "status": "tba",
+   "note": "2027 미공지. 2025는 대회 전 사이트에 프로그램 PDF를 게시함.",
+   "source": "https://conference2025.vascog.org/programme-2/"
+  },
+  {
+   "label": "SG Arrival Card 제출",
+   "date": "2027-11-10",
+   "status": "confirmed",
+   "note": "규정은 확정: 도착일을 포함해 도착 3일 전부터만 제출할 수 있음. 날짜는 2027-11-12 도착을 가정한 제출 시작일.",
+   "source": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card"
+  }
+ ],
+ "registration": {
+  "fees": [
+   {
+    "category": "비회원 (2025 참고)",
+    "early": "563",
+    "regular": "598",
+    "onsite": "미공지",
+    "currency": "GBP (VAT 별도)"
+   },
+   {
+    "category": "VasCog 회원 (2025 참고)",
+    "early": "483",
+    "regular": "517",
+    "onsite": "미공지",
+    "currency": "GBP (VAT 별도)"
+   },
+   {
+    "category": "비회원 ECI (2025 참고)",
+    "early": "360",
+    "regular": "400",
+    "onsite": "미공지",
+    "currency": "GBP (VAT 별도)"
+   },
+   {
+    "category": "회원 ECI (2025 참고)",
+    "early": "320",
+    "regular": "350",
+    "onsite": "미공지",
+    "currency": "GBP (VAT 별도)"
+   }
+  ],
+  "basis": "이전 대회 기준(참고)",
+  "notes": "2027 등록비는 미공지. Singapore 개최라 통화가 SGD 등으로 바뀔 수 있음. 2025 등록비에는 전 세션, 점심, 다과, 환영 리셉션, 학회 만찬이 포함됨. ECI는 MD·PhD 학생, 박사후연구원, 조교수. 회원가는 로그인 후 회원번호를 입력해야 적용되며 대회 기간까지 회원 자격이 유효해야 함. 연회비: 정회원 £60/1년, £110/2년, £150/3년, 학생 £40/1년. 참고로 2023 Gothenburg 등록비는 회원 SEK 4,500/5,500, 비회원 6,000/6,500, ECI 3,500/4,000.",
+  "source": "https://web.archive.org/web/20250715193513/https://conference2025.vascog.org/registration/"
+ },
+ "submission": {
+  "types": "구연 또는 포스터(일반 초록). 대회 직전에는 late-breaking 포스터만 받음(2025). 대회 주제 가운데 특정 심포지엄과 관련이 있어야 함.",
+  "format": "최대 350단어, 구조: Introduction/Methods/Results/Conclusion. 그림 1개(2025: TIFF와 JPEG, 10MB 이하; 2023: PDF로 최대 3개). 영어. 온라인 포털로만 제출.",
+  "review": "조직위가 수시 심사. 기준은 심포지엄 관련성, 과학적 내용·질·혁신성, 명료성. ECI는 신속 심사를 요청할 수 있었음(2025, eci@vascog.org).",
+  "presentation": "2025 포스터 규격은 페이지 버전마다 달랐음(2025-07 게시본: 세로 90cm × 가로 80cm; 현재 페이지: A0 세로). 1·2일차 점심시간에 포스터 앞에서 대기. 2027 규격은 미공지.",
+  "publication": "초록집 저널 게재는 확인 안 됨. 학회지 CCCB는 회원에게 게재료 할인을 제공.",
+  "source": "https://conference2025.vascog.org/abstract-submission/"
+ },
+ "travel": {
+  "entry": "한국 여권은 업무상 방문(회의 참석 포함)이나 관광 목적이면 최대 90일 무비자. 여권은 6개월 이상 남아 있어야 함. SG Arrival Card(전자 건강신고 포함)는 도착일 포함 3일 전부터 ICA e-Service나 MyICA 앱으로 무료 제출. 유료 대행 사이트에 주의.",
+  "entry_source": "https://seoul.mfa.gov.sg/consular-services/visa-information/ ; https://www.ica.gov.sg/enter-transit-depart/entering-singapore ; https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card",
+  "airport": "Singapore Changi Airport (SIN).",
+  "transport": "MRT: Changi Airport(CG2)에서 Tanah Merah(EW4)로 가서 East West Line으로 환승하거나, Expo(CG1/DT35)에서 Downtown Line으로 환승. LTA가 Changi Airport–Tanah Merah 구간을 TEL로 전환하는 공사를 진행 중이라 운행 조정 일정은 출발 전에 확인. 해외 발급 Visa·Mastercard 비접촉 카드로 탑승할 수 있고(하루 S$0.60 수수료), SimplyGo EZ-Link 카드도 S$10에 구매 가능.",
+  "hotels": "공식 숙박 안내는 미공지. 장소가 나오면 바로 근처 호텔을 무료 취소 조건으로 잡을 것. 2027년 11월 ASEAN 정상회의가 겹칠 수 있음.",
+  "local": "11월은 몬순 전환기로 오후·초저녁 뇌우가 잦음(평균 강수 252mm, 강수일 19일, 최고 31°C·최저 25°C). 우산이 필수이고, 실내 냉방이 강해 겉옷을 챙길 것. 전원은 Type G, 230V라 어댑터가 필요함.",
+  "source": "https://www.weather.gov.sg/climate-climate-of-singapore/ ; https://www.changiairport.com/en/at-changi/transport-and-directions/leaving-the-airport.html ; https://www.lta.gov.sg/content/ltagov/en/newsroom/2025/7/news-releases/TELe_and_CRL_changi_airport_to_city_centre.html ; https://simplygo.com.sg/faqs/cards-and-charms/simplygo/contactless-bank-cards/ ; https://sg.trip.com/guide/info/singapore-plugs.html"
+ },
+ "support": {
+  "text": "2027 여행지원금 공고는 없음. 지난 대회에는 ECI Award(초록 제출 시 옵트인, 상위 3편 상금), ECI Master Class, ECI 독립 세션·소셜 이벤트가 있었음. VasCog ECI 네트워크(MD·PhD 학생, 박사후연구원, 조교수)는 연 2회 온라인 모임을 운영함(문의 vascogeci@gmail.com).",
+  "source": "https://www.vascog.org/early-career-investigators/"
+ },
+ "tips": [
+  "장소가 아직 미공지(포스터 배경 Marina Bay Sands는 확정 아님). conference2027.vascog.org를 주기적으로 확인하고, 호텔은 무료 취소 조건으로만 선예약할 것.",
+  "등록 전에 VasCog 회원 가입·갱신: 2025 기준 회원 할인(약 £80)이 정회원 연회비(£60)보다 커서 이득이고, 대회 기간까지 회원 자격이 유효해야 할인이 적용됨.",
+  "초록은 수시 심사이고 2023에는 대회 3개월 전에 마감됐으므로 2027년 상반기~여름에 미리 준비. 350단어 IMRaD, 그림 1개.",
+  "초록은 특정 심포지엄과의 관련성이 심사 기준. 2025 주제(VCI 바이오마커, 신경영상, 역학·위험요인, 치료, AD 치료 중 혈관 문제·ARIA)에 맞춰 혈관성 인지·행동(우울 포함) 각도로 쓸 것.",
+  "전공의·박사후연구원·조교수는 초록 제출 시 ECI Award 옵트인을 체크(상위 3편 상금). ECI 세션·소셜 행사로 네트워킹하기 좋음.",
+  "발표자는 반드시 등록하고 등록비를 내야 함. 2025는 얼리버드와 late-breaking 마감이 모두 연장됐지만 연장을 기대하지 말 것.",
+  "2027년 11월 Singapore에 ASEAN 정상회의(약 2,500명)가 예정돼 있어 숙박이 부족할 수 있음. 장소가 발표되면 즉시 예약.",
+  "SG Arrival Card는 도착 3일 전부터만 제출되므로 출국 전날 전원 제출을 확인하고, 11월 오후 뇌우에 대비해 우산을 챙길 것."
+ ],
+ "sources": [
+  {
+   "title": "VasCog Society 홈 (VasCog 2027 Singapore 포스터)",
+   "url": "https://www.vascog.org/"
+  },
+  {
+   "title": "VasCog 2027 포스터 이미지 (2027-11-13~16, Singapore)",
+   "url": "https://www.vascog.org/wp-content/uploads/2026/09/Poster-VasCog-2027.png"
+  },
+  {
+   "title": "VasCog 2027 대회 사이트 (coming soon)",
+   "url": "https://conference2027.vascog.org/"
+  },
+  {
+   "title": "VasCog 2025 대회 사이트",
+   "url": "https://conference2025.vascog.org/"
+  },
+  {
+   "title": "VasCog 2025 초록 안내",
+   "url": "https://conference2025.vascog.org/abstract-submission/"
+  },
+  {
+   "title": "VasCog 2025 초록 안내 (2025-07 아카이브, 포스터 90×80cm)",
+   "url": "https://web.archive.org/web/20250719052406/https://conference2025.vascog.org/abstract-submission/"
+  },
+  {
+   "title": "VasCog 2025 등록 (2025-07 아카이브, 등록비)",
+   "url": "https://web.archive.org/web/20250715193513/https://conference2025.vascog.org/registration/"
+  },
+  {
+   "title": "VasCog 2025 등록 (현재 페이지, 마감 2025-08-01/09-11)",
+   "url": "https://conference2025.vascog.org/registration/"
+  },
+  {
+   "title": "VasCog 2025 홈 (2025-07 아카이브, 마감 연장 공지)",
+   "url": "https://web.archive.org/web/20250715193522/https://conference2025.vascog.org/"
+  },
+  {
+   "title": "VasCog 2023 초록 안내 (아카이브)",
+   "url": "https://web.archive.org/web/20230326182845/https://conference2023.vascog.org/abstract-submission/"
+  },
+  {
+   "title": "VasCog 2023 등록 (아카이브)",
+   "url": "https://web.archive.org/web/20230326173333/https://conference2023.vascog.org/registration/"
+  },
+  {
+   "title": "VasCog 회원 안내",
+   "url": "https://www.vascog.org/membership/"
+  },
+  {
+   "title": "VasCog Early Career Investigators",
+   "url": "https://www.vascog.org/early-career-investigators/"
+  },
+  {
+   "title": "VasCog About (격년 개최)",
+   "url": "https://www.vascog.org/about-us/"
+  },
+  {
+   "title": "VasCog 2025 하이라이트 (CCCB, 약 200명)",
+   "url": "https://doi.org/10.1016/j.cccb.2025.100525"
+  },
+  {
+   "title": "주한 싱가포르 대사관 비자 안내 (한국 여권 90일 무비자)",
+   "url": "https://seoul.mfa.gov.sg/consular-services/visa-information/"
+  },
+  {
+   "title": "ICA 입국 요건",
+   "url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore"
+  },
+  {
+   "title": "ICA SG Arrival Card",
+   "url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/sg-arrival-card"
+  },
+  {
+   "title": "MFA 2027 ASEAN 회의 일정 (2027-11 정상회의)",
+   "url": "https://www.mfa.gov.sg/newsroom/announcements-and-highlights/invitation-for-proposals-for-sponsorship-of-food-and-drinks--furniture--audio-visual-equipment--event-tokens-and-medical-services-for-high-level-meetings-and-conferences-in-2027/"
+  },
+  {
+   "title": "Meteorological Service Singapore 기후",
+   "url": "https://www.weather.gov.sg/climate-climate-of-singapore/"
+  },
+  {
+   "title": "Changi Airport 시내 이동",
+   "url": "https://www.changiairport.com/en/at-changi/transport-and-directions/leaving-the-airport.html"
+  },
+  {
+   "title": "LTA Changi Airport–Tanah Merah TEL 전환",
+   "url": "https://www.lta.gov.sg/content/ltagov/en/newsroom/2025/7/news-releases/TELe_and_CRL_changi_airport_to_city_centre.html"
+  },
+  {
+   "title": "SimplyGo 비접촉 은행카드 FAQ",
+   "url": "https://simplygo.com.sg/faqs/cards-and-charms/simplygo/contactless-bank-cards/"
+  },
+  {
+   "title": "Singapore 플러그 안내 (Type G, 230V; 비공식 여행 가이드)",
+   "url": "https://sg.trip.com/guide/info/singapore-plugs.html"
+  }
+ ]
+}

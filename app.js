@@ -86,7 +86,7 @@ function buildTimeline(list){
       const m=document.createElement("div");m.className="tl-today";m.style.left=(doy(today)/365*100)+"%";t.appendChild(m);
     });
   }
-  $("#tbaNote").innerHTML=`<span><b>일정 미발표:</b> CTAD(통상 10–12월) · IPA(파도바, 통상 여름–초가을) · CHIL(통상 6월 말) · ML4H(통상 12월 초)</span>
+  $("#tbaNote").innerHTML=`<span><b>일정 미발표:</b> CTAD(통상 10–12월) · CHIL(통상 6월 말) · ML4H(통상 12월 초)</span>
     <span><b>2027 개최 없음:</b> ISFTD · ADI · CINP (격년/취소 — 아래 참조)</span>`;
 }
 
@@ -138,7 +138,12 @@ function mcEvents(c,mem){
   const ev=[];
   c.dl.forEach(dl=>ev.push({d:dl.d,l:dl.l+(dl.note&&dl.d?` (${dl.note})`:""),k:dl.l.includes("마감")?"dl":"info",na:dl.d?null:(dl.note||"미공지")}));
   ev.push({d:c.start,end:c.end,l:"학회 기간",k:"conf"});
-  /* 같은 날짜·같은 일정은 참가자 이름을 모아 한 줄로 */
+  teamEvents(mem).forEach(g=>ev.push(g));
+  const dated=ev.filter(e=>e.d).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0), undated=ev.filter(e=>!e.d);
+  return {dated,undated};
+}
+/* 팀원 출장·출국·귀국 — 같은 날짜·같은 일정은 참가자 이름을 모아 한 줄로 */
+function teamEvents(mem){
   const grp={};
   const put=(d,l,k,name)=>{if(!d)return;const key=d+"|"+l;(grp[key]=grp[key]||{d,l,k,who:[]}).who.push(name);};
   mem.forEach(m=>{
@@ -147,9 +152,7 @@ function mcEvents(c,mem){
     put(m.outDate,"출국"+(m.outNo?" "+m.outNo:""),"fly",nm);
     put(m.retDate,"귀국"+(m.retNo?" "+m.retNo:""),"fly",nm);
   });
-  Object.values(grp).forEach(g=>ev.push(g));
-  const dated=ev.filter(e=>e.d).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0), undated=ev.filter(e=>!e.d);
-  return {dated,undated};
+  return Object.values(grp);
 }
 function mcPrep(m){
   const reg=m.regStatus==="early"?["조기등록","on"]:m.regStatus==="regular"?["정규등록","on"]:["등록 전",""];
@@ -181,7 +184,7 @@ function buildMgmtCards(){
       return `<div class="mc-ev k-${e.k}${past?" past":""}${isNext?" next":""}"><span class="d mono">${fmtShort(e.d)}${e.end&&e.end!==e.d?"–"+fmtShort(e.end):""}</span>
         <span class="l">${esc(e.l)}${e.who?` <span class="who">${esc(e.who.join(", "))}</span>`:""}</span>${chip}</div>`;
     }).join("")+undated.map(e=>`<div class="mc-ev na"><span class="d">미정</span><span class="l">${esc(e.l)} <span class="who">· ${esc(e.na)}</span></span></div>`).join("");
-    html+=`<article class="mcard c-${c.cat}" data-id="${c.id}" tabindex="0" aria-label="${esc(c.acro)} 관리카드 — 눌러서 상세 편집">
+    html+=`<article class="mcard c-${c.cat}" data-id="${c.id}" tabindex="0" aria-label="${esc(c.acro)} 관리카드 — 눌러서 상세 페이지">
       <div class="mc-head"><div><div class="mc-acro">${esc(c.acro)}</div><div class="mc-full">${esc(c.full)}</div></div>
         <span class="mc-dday mono">${dEnd<0?"종료":d0<=0?"진행 중":"D-"+d0}</span></div>
       <div class="mc-facts">
@@ -195,36 +198,121 @@ function buildMgmtCards(){
         ${mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — 카드를 눌러 ① 참가자를 추가하세요.</div>'}</div>
       <div class="mc-foot"><a class="linkbtn" href="${c.url}" target="_blank" rel="noopener">공식 사이트 ↗</a>
         <span class="statuspill ${c.status==="ok"?"ok":"part"}">${c.status==="ok"?"일정 확정":"일부 미정"}</span>
-        <span class="mc-edit">상세 편집 →</span></div>
+        <span class="mc-edit">상세 페이지 →</span></div>
     </article>`;
   });
   tbas.forEach(t=>{
     const mem=MEMBERS[t.id]||[];
-    html+=`<article class="mcard c-${t.cat}" data-id="${t.id}" tabindex="0" aria-label="${esc(t.acro)} 관리카드 — 눌러서 상세 편집">
+    html+=`<article class="mcard c-${t.cat}" data-id="${t.id}" tabindex="0" aria-label="${esc(t.acro)} 관리카드 — 눌러서 상세 페이지">
       <div class="mc-head"><div><div class="mc-acro">${esc(t.acro)}</div><div class="mc-full">2027 일정 미발표</div></div>
         <span class="mc-dday mono">미정</span></div>
       <div class="mc-desc">${esc(t.txt)}</div>
       <div class="mc-sec"><span class="slabel">준비 현황${mem.length?` · ${mem.length}명`:""}</span>
         ${mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — 카드를 눌러 ① 참가자를 추가하세요.</div>'}</div>
-      <div class="mc-foot"><a class="linkbtn" href="${t.url}" target="_blank" rel="noopener">공식 사이트 ↗</a><span class="mc-edit">상세 편집 →</span></div>
+      <div class="mc-foot"><a class="linkbtn" href="${t.url}" target="_blank" rel="noopener">공식 사이트 ↗</a><span class="mc-edit">상세 페이지 →</span></div>
     </article>`;
   });
   host.innerHTML=html;
 }
 $("#mcards").addEventListener("click",e=>{
   if(e.target.closest("a"))return;
-  const card=e.target.closest(".mcard"); if(card)openModal(card.dataset.id);
+  const card=e.target.closest(".mcard"); if(card)location.hash="cards/"+card.dataset.id;
 });
 $("#mcards").addEventListener("keydown",e=>{
   if(e.key!=="Enter"&&e.key!==" ")return;
-  const card=e.target.closest(".mcard"); if(card&&e.target===card){e.preventDefault();openModal(card.dataset.id);}
+  const card=e.target.closest(".mcard"); if(card&&e.target===card){e.preventDefault();location.hash="cards/"+card.dataset.id;}
+});
+
+/* ---------- 학회별 상세 페이지 (#cards/<id>, 2026-10-22) ----------
+   details.js(공식 사이트 조사분: 준비 기한·등록비·발표 규정·출입국·교통·숙소·지원·팁·출처)
+   + 팀원 일정(DB). 조사분이 없으면 data.js 기본 정보만 보여 준다. 편집은 기존 상세 팝업. */
+let detailId=null;
+const ST_LABEL={confirmed:["확정","ok"],expected:["예상","exp"],tba:["미공지","tba"]};
+function safeUrl(u){return /^https?:\/\//.test(String(u||""))?esc(String(u)):null;}
+function srcLink(u){const h=safeUrl(u);return h?` <a class="src" href="${h}" target="_blank" rel="noopener" title="출처">↗</a>`:"";}
+function dsec(title,body,cls){return body?`<section class="d-sec${cls?" "+cls:""}"><h3>${title}</h3>${body}</section>`:"";}
+function dtext(label,v,src){return v?`<div class="d-row"><span class="d-k">${label}</span><span class="d-v">${esc(String(v))}${srcLink(src)}</span></div>`:"";}
+function buildDetail(id){
+  const host=$("#cdetail"); if(!host)return;
+  const c=CONFS.find(x=>x.id===id), t=TBA.find(x=>x.id===id), base=c||t;
+  if(!base){host.innerHTML='<p class="mc-empty">학회를 찾지 못했습니다.</p>';return;}
+  const D=(typeof DETAILS!=="undefined"&&DETAILS[id])||null, ov=(D&&D.overview)||{};
+  const mem=MEMBERS[id]||[];
+  const start=(ov.dates&&ov.dates.start)||(c&&c.start)||null, end=(ov.dates&&ov.dates.end)||(c&&c.end)||null;
+  /* 일정표: 조사분 기한(없으면 data.js) + 학회 기간 + 팀원 일정 */
+  const ev=[];
+  const dls=D&&D.deadlines&&D.deadlines.length?D.deadlines.filter(x=>!(x.date&&x.date===start&&/학회 기간|본 학회/.test(x.label))).map(x=>({d:x.date||null,l:x.label,note:x.note,st:x.status,src:x.source,k:/마감|deadline/i.test(x.label)?"dl":"info"}))
+    :(c?c.dl.map(dl=>({d:dl.d,l:dl.l,note:dl.note,st:dl.d?"confirmed":"tba",k:dl.l.includes("마감")?"dl":"info"})):[]);
+  dls.forEach(x=>ev.push(x));
+  if(start)ev.push({d:start,end:end,l:"학회 기간",k:"conf"});
+  teamEvents(mem).forEach(g=>ev.push(g));
+  const dated=ev.filter(e=>e.d).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0), undated=ev.filter(e=>!e.d);
+  const next=dated.find(e=>dday(e.end||e.d)>=0&&e.k!=="info");
+  const rows=dated.map(e=>{
+    const n=dday(e.d), past=dday(e.end||e.d)<0;
+    const chip=past?`<span class="chip-d done">${e.k==="dl"?"마감":"지남"}</span>`
+      :`<span class="chip-d ${e.k==="dl"?(n<=30?"crit":n<=90?"warn":""):""}">${n<0?"진행 중":mcDay(n)}</span>`;
+    const st=e.st&&ST_LABEL[e.st]?`<span class="st st-${ST_LABEL[e.st][1]}">${ST_LABEL[e.st][0]}</span>`:"";
+    return `<div class="mc-ev k-${e.k}${past?" past":""}${e===next?" next":""}"><span class="d mono">${fmt(e.d)}${e.end&&e.end!==e.d?"–"+fmtShort(e.end):""}</span>
+      <span class="l">${esc(String(e.l))}${st}${e.who?` <span class="who">${esc(e.who.join(", "))}</span>`:""}${srcLink(e.src)}${e.note?`<span class="note">${esc(String(e.note))}</span>`:""}</span>${chip}</div>`;
+  }).join("")+undated.map(e=>`<div class="mc-ev na"><span class="d">미정</span><span class="l">${esc(String(e.l))}${(()=>{const L=ST_LABEL[e.st]||ST_LABEL.tba;return `<span class="st st-${L[1]}">${L[0]}</span>`;})()}${srcLink(e.src)}${e.note&&e.note!=="미공지"?`<span class="note">${esc(String(e.note))}</span>`:""}</span></div>`).join("");
+  /* 등록비 */
+  let fees="";
+  const R=D&&D.registration;
+  if(R&&R.fees&&R.fees.length){
+    const cur=[...new Set(R.fees.map(f=>f.currency).filter(Boolean))].join("/");
+    fees=`<div class="d-basis">${esc(String(R.basis||""))}${cur?" · 통화 "+esc(String(cur)):""}${srcLink(R.source)}</div><div class="tbl-wrap"><table class="d-tbl"><thead><tr><th>구분</th><th>조기</th><th>정규</th><th>현장</th></tr></thead><tbody>`+
+      R.fees.map(f=>`<tr><td>${esc(String(f.category||""))}</td><td>${esc(String(f.early||"–"))}</td><td>${esc(String(f.regular||"–"))}</td><td>${esc(String(f.onsite||"–"))}</td></tr>`).join("")+
+      `</tbody></table></div>${R.notes?`<p class="d-p">${esc(String(R.notes))}</p>`:""}`;
+  } else if(R&&R.notes){fees=`<p class="d-p">${esc(String(R.notes))}${srcLink(R.source)}</p>`;}
+  const S=(D&&D.submission)||{}, T=(D&&D.travel)||{}, P=(D&&D.support)||{};
+  const sub=[dtext("유형",S.types,S.source),dtext("형식",S.format),dtext("심사",S.review),dtext("발표",S.presentation),dtext("출판",S.publication)].join("");
+  const trv=[dtext("입국",T.entry,T.entry_source),dtext("공항",T.airport),dtext("교통",T.transport),dtext("숙소",T.hotels),dtext("현지",T.local,T.source)].join("");
+  const tips=D&&D.tips&&D.tips.length?`<ul class="d-list">${D.tips.map(x=>`<li>${esc(String(x))}</li>`).join("")}</ul>`:"";
+  const srcs=D&&D.sources&&D.sources.length?`<ul class="d-list d-srcs">${D.sources.filter(x=>safeUrl(x.url)).map(x=>`<li><a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${esc(String(x.title||x.url))} ↗</a></li>`).join("")}</ul>`:"";
+  const d0=start?dday(start):null, dEnd=end?dday(end):null;
+  const facts=[
+    `<span><b>${start?fmt(start)+(end&&end!==start?"–"+fmtShort(end):""):"일정 미공지"}</b></span>`,
+    `<span>${c?c.flag+" ":""}${esc(String(ov.city||(c&&c.city)||""))}${(ov.country||(c&&c.country))?", "+esc(String(ov.country||c.country)):""}</span>`,
+    `<span class="venue">${esc(String(ov.venue||(c&&c.venue)||"베뉴 미공지"))}</span>`].join("");
+  const ovRows=[dtext("주소",ov.address),dtext("형식",ov.format),dtext("주최",ov.organizer),dtext("규모",ov.scale),dtext("프로시딩",ov.proceedings),dtext("참고",ov.note)].join("");
+  host.innerHTML=`
+    <div class="d-top"><button type="button" class="d-back">← 관리카드 목록</button>
+      ${D?`<span class="d-checked">공식 사이트 확인 ${esc(String(D.checked||""))}</span>`:'<span class="d-checked warn">공식 사이트 상세 조사 전 — 기본 정보만 표시</span>'}</div>
+    <div class="d-head c-${base.cat}">
+      <div class="d-titles"><div class="d-acro">${esc(base.acro)}</div><div class="d-full">${esc(String(ov.name||(c&&c.full)||""))}</div>
+        <div class="mc-facts">${facts}</div></div>
+      <span class="mc-dday mono">${d0===null?"미정":dEnd<0?"종료":d0<=0?"진행 중":"D-"+d0}</span>
+    </div>
+    <div class="d-actions"><a class="linkbtn primary" href="${safeUrl(base.url)||"#"}" target="_blank" rel="noopener">공식 사이트 ↗</a>
+      <button type="button" class="linkbtn d-edit">참가 정보 편집 (참가자·등록·초록·출장·항공·숙소)</button></div>
+    ${next?`<div class="mc-next">다음 할 일 · <b>${esc(String(next.l))}</b> ${fmt(next.d)} <span class="mono">${dday(next.d)<0?"진행 중":mcDay(dday(next.d))}</span></div>`:""}
+    <div class="d-grid">
+      ${dsec("준비 일정 <small>확정 · 예상(전년 기준) · 미공지</small>",rows||'<div class="gmsg">일정 정보 없음</div>',"wide")}
+      ${dsec("팀 준비 현황"+(mem.length?` <small>${mem.length}명</small>`:""),mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — ‘참가 정보 편집’에서 ① 참가자를 추가하세요.</div>')}
+      ${dsec("학회 개요",ovRows||(c?`<p class="d-p">${esc(c.scale)}</p>`:t?`<p class="d-p">${esc(t.txt)}</p>`:""))}
+      ${dsec("등록비",fees)}
+      ${dsec("초록 · 발표",sub)}
+      ${dsec("출입국 · 교통 · 숙소",trv)}
+      ${dsec("지원 · 수상",P.text?`<p class="d-p">${esc(String(P.text))}${srcLink(P.source)}</p>`:"")}
+      ${dsec("참석 팁",tips)}
+      ${dsec("출처",srcs,"wide")}
+    </div>`;
+}
+$("#cdetail").addEventListener("click",e=>{
+  if(e.target.closest(".d-back")){location.hash="cards";return;}
+  if(e.target.closest(".d-edit")&&detailId){openModal(detailId);}
 });
 
 /* ---------- 탭: 학회 플래너 · 관리카드 (2026-10-21) ----------
    주소 #cards / #plan 으로 바로 열 수 있고, 마지막 탭은 이 브라우저에 기억한다. */
 const TABS=["plan","cards"];
-function showTab(t,remember){
-  if(!TABS.includes(t))t="plan";
+function showTab(h,remember){
+  let [t,sub]=String(h||"").split("/");
+  if(!TABS.includes(t)){t="plan";sub=null;}
+  detailId=t==="cards"&&sub?decodeURIComponent(sub):null;
+  $("#mcards").hidden=!!detailId; $("#cdetail").hidden=!detailId; $("#cardsSub").hidden=!!detailId;
+  if(detailId){buildDetail(detailId);window.scrollTo(0,0);}
   TABS.forEach(x=>{
     $("#tab-"+x).hidden=x!==t;
     const b=$("#tabBtn-"+x); b.setAttribute("aria-selected",String(x===t)); b.tabIndex=x===t?0:-1;
@@ -245,7 +333,7 @@ document.querySelector(".tabs").addEventListener("keydown",e=>{
 });
 window.addEventListener("hashchange",()=>showTab(location.hash.slice(1)));
 (()=>{let t=location.hash.slice(1);
-  if(!TABS.includes(t)){try{t=localStorage.getItem("conf2027-tab")||"plan";}catch(e){t="plan";}}
+  if(!TABS.includes(t.split("/")[0])){try{t=localStorage.getItem("conf2027-tab")||"plan";}catch(e){t="plan";}}
   showTab(t);})();
 
 /* ---------- detail modal ---------- */
@@ -451,6 +539,7 @@ function refreshTeamUI(){
   if(el&&!el.classList.contains("editing"))renderTeamBlock(el);
   updateRowBadges();
   buildMgmtCards();
+  if(detailId)buildDetail(detailId);
 }
 const REG_OPTS=[["","미등록"],["early","조기등록 완료"],["regular","정규등록 완료"]];
 const SEC_EMPTY='<div class="gmsg">① 참가자 섹션에서 먼저 추가하세요.</div>';
