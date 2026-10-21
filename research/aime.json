@@ -327,5 +327,28 @@
    "title": "European Commission — Schengen visa policy (90/180일)",
    "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
   }
- ]
+ ],
+ "place": {
+  "city": "암스테르담은 네덜란드의 공식 수도이며 시 인구 약 94만 명(2026-01-01 기준), 광역권 약 248만 명임. 운하가 촘촘해 '북쪽의 베네치아'로 불리며, 17세기 운하 환상지대는 2010년 유네스코 세계유산으로 지정됨. 17세기 네덜란드 황금시대에 세계적 항구·금융 중심지였고, 국립미술관(Rijksmuseum)·반 고흐 미술관·안네 프랑크의 집 등 박물관으로 유명함.",
+  "city_source": "https://en.wikipedia.org/wiki/Amsterdam",
+  "climate": "스히폴 공항 관측 기준 7월 평균 최고기온 약 22.5°C, 평균 최저기온 약 13.5°C로 한국 여름보다 훨씬 선선함. 7월 평균 강수량 약 82mm, 1mm 이상 비 오는 날이 약 11일로 한 달의 1/3가량 비가 옴. 아침·저녁용 얇은 겉옷이나 가디건, 접이식 우산이나 방수 재킷을 챙기는 것이 좋음.",
+  "climate_source": "https://en.wikipedia.org/wiki/Amsterdam",
+  "safety": "카페·바·식당 등 붐비는 곳과 대형 행사장에서 소매치기가 활동하며 여럿이 짜고 주의를 분산시키는 수법을 씀. 귀중품은 호텔 금고 등에 두고 현금은 최소한만 지니는 것이 권장됨. 자전거가 약 85만 대에 달해, 보행자는 인도로만 다니고 길을 건널 때 자전거와 차량을 먼저 확인해야 함. 운하는 벽이 높고 수온이 낮아 빠지면 위험하며, 응급 상황은 112(영어 응대 가능), 비응급 경찰은 0900-8844임. 팁은 의무가 아니며 5~10%가 관례임.",
+  "safety_source": [
+   "https://www.iamsterdam.com/en/travel-stay/health-safety-and-crime-in-amsterdam",
+   "https://www.iamsterdam.com/en/travel-stay/visitor-information/communication-and-money"
+  ],
+  "venue": "주 행사장 KIT 왕립열대연구소 건물은 옛 동부 묘지 터에 1915년 착공했으나 제1차 세계대전과 자재 부족, 파업 등으로 11년이 걸려 1926년 10월 빌헬미나 여왕이 개관했으며 국가 기념물로 지정되어 있음. 신르네상스 양식으로 설계되었고, 팔각형의 대리석 홀(Marble Hall), 대강당, 마우리츠카더와 린나이우스스트라트 모퉁이의 종탑이 특징임. 오스터파르크(Oosterpark) 일대에 자리함. 학회에서는 Queen Máxima Hall이 기조강연·본 세션, Marble Hall이 포스터·커피 브레이크 공간으로 쓰임(AIME 2027 공식 안내).",
+  "venue_source": [
+   "https://en.wikipedia.org/wiki/Royal_Tropical_Institute",
+   "https://aime27.aimedicine.info/venue/"
+  ],
+  "venue2": "워크숍·튜토리얼 장소인 VU 암스테르담은 1880년 설립된 대학으로 재학생 약 3만 1,500명(2026-06 기준)이며, 시 남부 부이텐벨더르트(Buitenveldert)의 밀집형 도심 캠퍼스가 현대식 업무지구 자위다스(Zuidas)에 맞붙어 있음. NU 건물(New University Building)은 2018년 개관한 신축 건물로 강의 공간과 문화 공간을 갖춤. 의과대학은 대형 병원 Amsterdam UMC(VUmc 캠퍼스) 바로 옆에 있음. 동부(Oost)의 KIT와 남부의 VU는 서로 다른 지역으로, 두 장소 간 이동 경로·소요시간은 (확인 필요)임.",
+  "venue2_source": "https://en.wikipedia.org/wiki/Vrije_Universiteit_Amsterdam",
+  "nearby": "행사장 옆 오스터파르크는 연못·개울·산책로가 있는 큰 도시공원으로 휴식 시간 산책에 적합함. 같은 건물 단지에 세계 각지 유물을 소장한 세계박물관(Wereldmuseum, 옛 트로펜박물관)이 있음. 다퍼스트라트의 다퍼마르크트(Dappermarkt)는 신선식품·치즈·청어·키벨링 등을 파는 거리 시장이며, 저녁에는 옛 목욕탕 건물의 양조장 Brouwerij 't IJ, 다양한 식당이 모인 야바스트라트(Javastraat), 17세기 영지인 프랑컨달 공원 등을 둘러볼 수 있음.",
+  "nearby_source": [
+   "https://www.iamsterdam.com/en/explore/neighbourhoods/oost/things-to-do",
+   "https://en.wikipedia.org/wiki/Tropenmuseum"
+  ]
+ }
 }

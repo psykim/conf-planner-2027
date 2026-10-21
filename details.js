@@ -330,7 +330,30 @@ const DETAILS = {
     "title": "European Commission — Schengen visa policy (90/180일)",
     "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en"
    }
-  ]
+  ],
+  "place": {
+   "city": "암스테르담은 네덜란드의 공식 수도이며 시 인구 약 94만 명(2026-01-01 기준), 광역권 약 248만 명임. 운하가 촘촘해 '북쪽의 베네치아'로 불리며, 17세기 운하 환상지대는 2010년 유네스코 세계유산으로 지정됨. 17세기 네덜란드 황금시대에 세계적 항구·금융 중심지였고, 국립미술관(Rijksmuseum)·반 고흐 미술관·안네 프랑크의 집 등 박물관으로 유명함.",
+   "city_source": "https://en.wikipedia.org/wiki/Amsterdam",
+   "climate": "스히폴 공항 관측 기준 7월 평균 최고기온 약 22.5°C, 평균 최저기온 약 13.5°C로 한국 여름보다 훨씬 선선함. 7월 평균 강수량 약 82mm, 1mm 이상 비 오는 날이 약 11일로 한 달의 1/3가량 비가 옴. 아침·저녁용 얇은 겉옷이나 가디건, 접이식 우산이나 방수 재킷을 챙기는 것이 좋음.",
+   "climate_source": "https://en.wikipedia.org/wiki/Amsterdam",
+   "safety": "카페·바·식당 등 붐비는 곳과 대형 행사장에서 소매치기가 활동하며 여럿이 짜고 주의를 분산시키는 수법을 씀. 귀중품은 호텔 금고 등에 두고 현금은 최소한만 지니는 것이 권장됨. 자전거가 약 85만 대에 달해, 보행자는 인도로만 다니고 길을 건널 때 자전거와 차량을 먼저 확인해야 함. 운하는 벽이 높고 수온이 낮아 빠지면 위험하며, 응급 상황은 112(영어 응대 가능), 비응급 경찰은 0900-8844임. 팁은 의무가 아니며 5~10%가 관례임.",
+   "safety_source": [
+    "https://www.iamsterdam.com/en/travel-stay/health-safety-and-crime-in-amsterdam",
+    "https://www.iamsterdam.com/en/travel-stay/visitor-information/communication-and-money"
+   ],
+   "venue": "주 행사장 KIT 왕립열대연구소 건물은 옛 동부 묘지 터에 1915년 착공했으나 제1차 세계대전과 자재 부족, 파업 등으로 11년이 걸려 1926년 10월 빌헬미나 여왕이 개관했으며 국가 기념물로 지정되어 있음. 신르네상스 양식으로 설계되었고, 팔각형의 대리석 홀(Marble Hall), 대강당, 마우리츠카더와 린나이우스스트라트 모퉁이의 종탑이 특징임. 오스터파르크(Oosterpark) 일대에 자리함. 학회에서는 Queen Máxima Hall이 기조강연·본 세션, Marble Hall이 포스터·커피 브레이크 공간으로 쓰임(AIME 2027 공식 안내).",
+   "venue_source": [
+    "https://en.wikipedia.org/wiki/Royal_Tropical_Institute",
+    "https://aime27.aimedicine.info/venue/"
+   ],
+   "venue2": "워크숍·튜토리얼 장소인 VU 암스테르담은 1880년 설립된 대학으로 재학생 약 3만 1,500명(2026-06 기준)이며, 시 남부 부이텐벨더르트(Buitenveldert)의 밀집형 도심 캠퍼스가 현대식 업무지구 자위다스(Zuidas)에 맞붙어 있음. NU 건물(New University Building)은 2018년 개관한 신축 건물로 강의 공간과 문화 공간을 갖춤. 의과대학은 대형 병원 Amsterdam UMC(VUmc 캠퍼스) 바로 옆에 있음. 동부(Oost)의 KIT와 남부의 VU는 서로 다른 지역으로, 두 장소 간 이동 경로·소요시간은 (확인 필요)임.",
+   "venue2_source": "https://en.wikipedia.org/wiki/Vrije_Universiteit_Amsterdam",
+   "nearby": "행사장 옆 오스터파르크는 연못·개울·산책로가 있는 큰 도시공원으로 휴식 시간 산책에 적합함. 같은 건물 단지에 세계 각지 유물을 소장한 세계박물관(Wereldmuseum, 옛 트로펜박물관)이 있음. 다퍼스트라트의 다퍼마르크트(Dappermarkt)는 신선식품·치즈·청어·키벨링 등을 파는 거리 시장이며, 저녁에는 옛 목욕탕 건물의 양조장 Brouwerij 't IJ, 다양한 식당이 모인 야바스트라트(Javastraat), 17세기 영지인 프랑컨달 공원 등을 둘러볼 수 있음.",
+   "nearby_source": [
+    "https://www.iamsterdam.com/en/explore/neighbourhoods/oost/things-to-do",
+    "https://en.wikipedia.org/wiki/Tropenmuseum"
+   ]
+  }
  },
  "ipa": {
   "id": "ipa",
@@ -651,7 +674,19 @@ const DETAILS = {
     "title": "Italy plug types (Wise)",
     "url": "https://wise.com/us/blog/italy-power-adapter"
    }
-  ]
+  ],
+  "place": {
+   "city": "파도바는 베네토주 3번째 규모 도시로 인구 약 20만 8천 명(2026년 기준)임. 1222년 설립된 파도바 대학교가 도시의 중심이며, 1594년 건립된 현존하는 가장 오래된 상설 해부학 강당이 남아 있고 갈릴레오가 이곳에서 강의했음. 1545년 조성된 가장 오래된 대학 식물원(Orto Botanico, 1997년 등재)과 조토의 스크로베니 예배당을 포함한 14세기 프레스코 연작(Padova Urbs picta, 2021년 등재) 등 유네스코 세계유산 2건을 보유함. 유럽 최대급 광장인 프라토 델라 발레(9만㎡, 조각상 78개)도 대표 명소임.",
+   "city_source": "https://en.wikipedia.org/wiki/Padua",
+   "climate": "5월 평균 최고기온 약 24.0℃, 평균 최저기온 약 14.1℃로 낮에는 따뜻하고 아침·저녁은 선선함. 월 강수량 약 101.9mm, 강수일 약 9일로 비가 잦은 편임. 반팔·얇은 긴팔 위주에 저녁용 가벼운 겉옷과 접이식 우산을 챙기는 것이 좋음. 냉방이 강한 학회장 실내 대비 카디건 1벌도 권장함.",
+   "climate_source": "https://en.wikipedia.org/wiki/Padua",
+   "safety": "이탈리아는 전반적으로 범죄율이 낮으나 도심·주요 관광지, 대중교통, 기차역, 카페·식당 등 붐비는 곳에서 소매치기·날치기가 잦음. 소지품을 늘 시야 안에 두고, 주의 분산 수법에 유의하며, 귀중품을 한곳에 몰아 다니지 않는 것이 좋음. 역사지구는 노란 바탕에 검은 글씨 'ZTL' 표지의 차량 통행 제한 구역으로, 허가 없이 렌터카로 진입하면 번호판이 촬영되어 과태료가 부과됨. 긴급 신고는 112임.",
+   "safety_source": "https://www.gov.uk/foreign-travel-advice/italy/safety-and-security",
+   "venue": "Padova Congress는 파도바 박람회장(Fiera di Padova) 단지 안 Via N. Tommaseo 59에 위치한 컨벤션센터로, 일본 건축가가 설계한 현대 건축물임. 대표 홀인 Sala Giotto(1,565석, 공식 사이트는 1,380석으로 출처마다 다름)와 Sala Mantegna(988석)를 비롯해 60~150석 규모 소형 홀까지 총 11개 공간을 갖추고 있음. 152㎡ 대형 LED 스크린 등 첨단 멀티미디어 설비를 갖췄으며, 파도바 중앙역에서 약 500m(도보 5분) 거리임.",
+   "venue_source": "https://www.padovaconvention.it/it/programma-un-convegno/centri-congressi-fiere/padova-congress",
+   "nearby": "조토의 프레스코 연작(1303~1305)이 있는 스크로베니 예배당은 Piazza Eremitani 8에 있으며, 도보 소요시간은 (확인 필요)임. 관람은 최소 하루 전 예약이 필수이고 지각 시 입장이 불가하므로 학회 일정 전 미리 예약할 것을 권장함. 매일 9~19시 주간 관람 외에 3월 25일~11월 3일에는 19~22시 야간 관람도 운영되어 세션 종료 후 방문 가능함. 요금은 일반 15유로+예약비 1유로임(2026년 기준, 2027년 일정·요금은 재확인 필요).",
+   "nearby_source": "https://www.turismopadova.it/en/scrovegni-chapel/"
+  }
  },
  "miccai": {
   "id": "miccai",
@@ -1036,7 +1071,26 @@ const DETAILS = {
     "title": "Discover New Zealand – Electricity voltage/plug (참고)",
     "url": "https://www.discovernewzealand.com/faqs/new-zealand-electricity-voltage"
    }
-  ]
+  ],
+  "place": {
+   "city": "오클랜드는 뉴질랜드 최대 도시로, 도시 인구 약 154만 7천 명(2025년 6월)이며 전국 인구의 약 29%가 거주함. 북쪽 와이테마타(Waitematā) 항과 남쪽 마누카우(Manukau) 항 사이에 자리하며, 최소 53개의 소형 화산체로 이루어진 오클랜드 화산지대 위에 세워진 도시임. 마오리어 이름 타마키 마카우라우(Tāmaki Makaurau)는 '많은 이들이 탐낸 타마키'라는 뜻으로 풍부한 자연자원과 지리적 이점을 가리킴. 주민의 44.9%가 해외 출생(2023년 인구조사)이고 세계에서 폴리네시아계 인구가 가장 많은 도시인 다문화 도시이며, 1883년 설립된 뉴질랜드 최대 대학인 오클랜드대학교가 있음.",
+   "city_source": "https://en.wikipedia.org/wiki/Auckland",
+   "climate": "학회 기간은 남반구 봄으로, NIWA 1991~2020년 평년값 기준 오클랜드의 일 평균 최고/최저기온은 9월 16.5℃/9.7℃, 10월 17.9℃/11.3℃ 수준임. 9~10월은 비 오는 날(0.1mm 이상)이 오클랜드 공항 기준 월 16~17일로 잦고 봄은 바람이 가장 강한 계절이므로 우산·방풍 겉옷 준비가 필요함. 뉴질랜드 일광절약시간은 2027년 9월 26일(일) 02시에 시작되어 학회 개막(9월 27일) 직전부터 적용되며, 한국과의 시차는 일광절약시간 중 +4시간, 시작 전 +3시간임(표준시 기준 계산, 확인 필요).",
+   "climate_source": [
+    "https://figure.nz/chart/suDfDLV40cwPuZWq-SieAAVRCwyf6BPo5",
+    "https://webstatic.niwa.co.nz/static/Auckland%20ClimateWEB.pdf",
+    "https://www.govt.nz/browse/recreation-and-the-environment/daylight-saving/"
+   ],
+   "safety": "뉴질랜드는 대부분의 식품 반입이 불법이며, 금지·과세 대상일 수 있는 물품은 입국 시 반드시 신고해야 함. 목재·가죽 제품, 텐트, 낚시 장비, 골프채 등도 병해충 매개 우려가 있어 확인 대상임. 반입 가능 여부가 불확실하면 생물보안 담당관에게 신고하거나 공항의 지정 폐기함에 버리면 되며, 생물보안 규정 위반 시 최대 NZ$100,000 벌금 또는 징역형이 부과될 수 있음.",
+   "safety_source": "https://www.gov.uk/foreign-travel-advice/new-zealand/entry-requirements",
+   "venue": "NZICC(New Zealand International Convention Centre)는 2026년 2월 개관한 오클랜드 도심의 컨벤션센터로, 공식 국제컨벤션센터 지위를 가진 시설임. 4개 층에 걸쳐 32,500㎡의 행사 공간과 회의실 33개를 갖추고 있으며, 아리키 홀(Ariki Hall)은 최대 4,500명·전시 부스 400개, 테 파에파에 극장(Te Paepae Theatre)은 2,852석으로 두 개 극장으로 분할 가능함. 마오리 신화 속 숲과 새의 영역인 '타네의 세계'에서 영감을 받은 디자인으로, 대형 공공 미술과 문화 서사가 건축 전반에 반영되어 있음.",
+   "venue_source": "https://www.ttgmice.com/2026/07/22/new-zealand-international-convention-centre-auckland/",
+   "nearby": "NZICC는 스카이시티(SkyCity) 단지와 바로 붙어 있어 스카이타워가 인접해 있으며, 주변 도보권에 8,000실 이상의 호텔 객실과 식당·쇼핑 시설이 있음. 같은 도심(CBD) 안에 1888년부터 운영된 오클랜드 미술관(Toi o Tāmaki), 화산 지형인 앨버트 파크, 오클랜드대학교 캠퍼스가 있음. 워터프런트의 바이어덕트 하버·윈야드 쿼터, 교통 거점인 브리토마트 역, 데번포트·와이헤케섬행 페리가 출발하는 오클랜드 페리 터미널도 도심에 있음(정확한 도보 소요시간은 확인 필요).",
+   "nearby_source": [
+    "https://www.ttgmice.com/2026/07/22/new-zealand-international-convention-centre-auckland/",
+    "https://en.wikipedia.org/wiki/Auckland_CBD"
+   ]
+  }
  },
  "vascog": {
   "id": "vascog",
@@ -1306,6 +1360,33 @@ const DETAILS = {
     "title": "Singapore 플러그 안내 (Type G, 230V; 비공식 여행 가이드)",
     "url": "https://sg.trip.com/guide/info/singapore-plugs.html"
    }
-  ]
+  ],
+  "place": {
+   "city": "싱가포르는 적도에서 북쪽으로 약 137km 떨어진 도시국가로, 2025년 추계 인구는 약 611만 명임. 공용어는 영어·말레이어·중국어(만다린)·타밀어 4개이며 국어는 말레이어임. 치매 연구 거점으로 NUS 의과대학(Yong Loo Lin)이 국립대학병원(NUH)과 협력 운영하는 Memory, Ageing and Cognition Centre(MACC)가 있으며, 2010년 이후 논문 561편과 예방 임상시험 SINGER를 수행 중임.",
+   "city_source": [
+    "https://en.wikipedia.org/wiki/Singapore",
+    "https://www.macc.sg/"
+   ],
+   "climate": "연중 기온 25~33°C의 열대기후로, 가볍고 통풍이 잘되는 옷차림과 갑작스러운 비에 대비한 우산 지참이 권장됨. 표준시는 GMT+8(SGT)로 한국(UTC+9)보다 1시간 늦음.",
+   "climate_source": "https://www.visitsingapore.com/travel-tips/essential-travel-information/",
+   "safety": "건물·식당·교통 거점·대중교통 차량·체육시설 안은 금연이며, 흡연은 표지가 있는 지정 구역에서만 가능함. 전자담배는 구매·소지·사용 모두 불법으로 벌금(composition fine) 또는 기소 대상이며, 에토미데이트가 든 전자담배(K-pods)가 적발되면 입국 거부·재입국 금지가 될 수 있음. 껌과 전자담배는 반입 금지 품목임. 호커센터·푸드코트에서 쟁반·쓰레기를 테이블에 두고 가는 것도 위법이며, 팁은 관례가 아님.",
+   "safety_source": [
+    "https://www.visitsingapore.com/travel-tips/essential-travel-information/",
+    "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/what-you-can-bring"
+   ],
+   "venue": "VasCog 2027 공식 사이트는 2026-10-22 기준 'coming soon' 상태이며 개최 장소는 발표되지 않음. 아래는 싱가포르의 대표적인 대형 컨벤션 시설을 소개하는 후보 참고 정보일 뿐, 개최 장소가 아님. Marina Bay Sands 안의 Sands Expo & Convention Centre(10 Bayfront Avenue)는 면적 약 11만~12만㎡(자료마다 다름)에 최대 4만 5천 명을 수용함. Suntec Singapore(마리나 센터)는 여러 층에 걸쳐 약 10만㎡ 규모이며 MRT Esplanade역·Promenade역과 가까움.",
+   "venue_source": [
+    "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+    "https://en.wikipedia.org/wiki/Suntec_Singapore_Convention_and_Exhibition_Centre",
+    "https://conference2027.vascog.org/"
+   ],
+   "nearby": "마리나베이 일대에는 슈퍼트리로 알려진 Gardens by the Bay, 공연장 Esplanade – Theatres on the Bay, Merlion Park가 모여 있음. 인근 시빅 디스트릭트에는 옛 대법원·시청 건물을 활용한 National Gallery Singapore, National Museum, Asian Civilisations Museum이 있음. 싱가포르 호커 문화는 2020년 유네스코 인류무형문화유산에 등재되었으며, 도심 호커센터로는 빅토리아 시대 건물인 Lau Pa Sat(야외 사테 거리 운영)과 Maxwell Food Centre가 있음.",
+   "nearby_source": [
+    "https://www.visitsingapore.com/travel-tips/travelling-to-singapore/itineraries/singapore-city-tour-guide/",
+    "https://en.wikipedia.org/wiki/Civic_District",
+    "https://en.wikipedia.org/wiki/Lau_Pa_Sat",
+    "https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568"
+   ]
+  }
  }
 };

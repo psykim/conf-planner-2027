@@ -224,12 +224,12 @@ $("#mcards").addEventListener("keydown",e=>{
 });
 
 /* ---------- 학회별 상세 페이지 (#cards/<id>, 2026-10-22) ----------
-   details.js(공식 사이트 조사분: 준비 기한·등록비·발표 규정·출입국·교통·숙소·지원·팁·출처)
+   details.js(공식 사이트 조사분: 준비 기한·등록비·발표 규정·도시·학회장 소개(place, v1.4.0)·출입국·교통·숙소·지원·팁·출처)
    + 팀원 일정(DB). 조사분이 없으면 data.js 기본 정보만 보여 준다. 편집은 기존 상세 팝업. */
 let detailId=null;
 const ST_LABEL={confirmed:["확정","ok"],expected:["예상","exp"],tba:["미공지","tba"]};
 function safeUrl(u){return /^https?:\/\//.test(String(u||""))?esc(String(u)):null;}
-function srcLink(u){const h=safeUrl(u);return h?` <a class="src" href="${h}" target="_blank" rel="noopener" title="출처">↗</a>`:"";}
+function srcLink(u){if(Array.isArray(u))return u.map(srcLink).join("");const h=safeUrl(u);return h?` <a class="src" href="${h}" target="_blank" rel="noopener" title="출처">↗</a>`:"";}
 function dsec(title,body,cls){return body?`<section class="d-sec${cls?" "+cls:""}"><h3>${title}</h3>${body}</section>`:"";}
 function dtext(label,v,src){return v?`<div class="d-row"><span class="d-k">${label}</span><span class="d-v">${esc(String(v))}${srcLink(src)}</span></div>`:"";}
 function buildDetail(id){
@@ -267,6 +267,9 @@ function buildDetail(id){
   } else if(R&&R.notes){fees=`<p class="d-p">${esc(String(R.notes))}${srcLink(R.source)}</p>`;}
   const S=(D&&D.submission)||{}, T=(D&&D.travel)||{}, P=(D&&D.support)||{};
   const sub=[dtext("유형",S.types,S.source),dtext("형식",S.format),dtext("심사",S.review),dtext("발표",S.presentation),dtext("출판",S.publication)].join("");
+  const L=(D&&D.place)||{};
+  const plc=[dtext("도시",L.city,L.city_source),dtext("날씨",L.climate,L.climate_source),dtext("생활 수칙",L.safety,L.safety_source),
+    dtext("학회장",L.venue,L.venue_source),dtext("부속 장소",L.venue2,L.venue2_source),dtext("주변",L.nearby,L.nearby_source)].join("");
   const trv=[dtext("입국",T.entry,T.entry_source),dtext("공항",T.airport),dtext("교통",T.transport),dtext("숙소",T.hotels),dtext("현지",T.local,T.source)].join("");
   const tips=D&&D.tips&&D.tips.length?`<ul class="d-list">${D.tips.map(x=>`<li>${esc(String(x))}</li>`).join("")}</ul>`:"";
   const srcs=D&&D.sources&&D.sources.length?`<ul class="d-list d-srcs">${D.sources.filter(x=>safeUrl(x.url)).map(x=>`<li><a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${esc(String(x.title||x.url))} ↗</a></li>`).join("")}</ul>`:"";
@@ -291,6 +294,7 @@ function buildDetail(id){
       ${dsec("준비 일정 <small>확정 · 예상(전년 기준) · 미공지</small>",rows||'<div class="gmsg">일정 정보 없음</div>',"wide")}
       ${dsec("팀 준비 현황"+(mem.length?` <small>${mem.length}명</small>`:""),mem.length?mem.map(mcPrep).join(""):'<div class="gmsg">참가자 미등록 — ‘참가 정보 편집’에서 ① 참가자를 추가하세요.</div>')}
       ${dsec("학회 개요",ovRows||(c?`<p class="d-p">${esc(c.scale)}</p>`:t?`<p class="d-p">${esc(t.txt)}</p>`:""))}
+      ${dsec("도시 · 학회장 소개",plc,"wide")}
       ${dsec("등록비",fees)}
       ${dsec("초록 · 발표",sub)}
       ${dsec("출입국 · 교통 · 숙소",trv)}

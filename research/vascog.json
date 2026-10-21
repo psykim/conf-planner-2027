@@ -266,5 +266,32 @@
    "title": "Singapore 플러그 안내 (Type G, 230V; 비공식 여행 가이드)",
    "url": "https://sg.trip.com/guide/info/singapore-plugs.html"
   }
- ]
+ ],
+ "place": {
+  "city": "싱가포르는 적도에서 북쪽으로 약 137km 떨어진 도시국가로, 2025년 추계 인구는 약 611만 명임. 공용어는 영어·말레이어·중국어(만다린)·타밀어 4개이며 국어는 말레이어임. 치매 연구 거점으로 NUS 의과대학(Yong Loo Lin)이 국립대학병원(NUH)과 협력 운영하는 Memory, Ageing and Cognition Centre(MACC)가 있으며, 2010년 이후 논문 561편과 예방 임상시험 SINGER를 수행 중임.",
+  "city_source": [
+   "https://en.wikipedia.org/wiki/Singapore",
+   "https://www.macc.sg/"
+  ],
+  "climate": "연중 기온 25~33°C의 열대기후로, 가볍고 통풍이 잘되는 옷차림과 갑작스러운 비에 대비한 우산 지참이 권장됨. 표준시는 GMT+8(SGT)로 한국(UTC+9)보다 1시간 늦음.",
+  "climate_source": "https://www.visitsingapore.com/travel-tips/essential-travel-information/",
+  "safety": "건물·식당·교통 거점·대중교통 차량·체육시설 안은 금연이며, 흡연은 표지가 있는 지정 구역에서만 가능함. 전자담배는 구매·소지·사용 모두 불법으로 벌금(composition fine) 또는 기소 대상이며, 에토미데이트가 든 전자담배(K-pods)가 적발되면 입국 거부·재입국 금지가 될 수 있음. 껌과 전자담배는 반입 금지 품목임. 호커센터·푸드코트에서 쟁반·쓰레기를 테이블에 두고 가는 것도 위법이며, 팁은 관례가 아님.",
+  "safety_source": [
+   "https://www.visitsingapore.com/travel-tips/essential-travel-information/",
+   "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/what-you-can-bring"
+  ],
+  "venue": "VasCog 2027 공식 사이트는 2026-10-22 기준 'coming soon' 상태이며 개최 장소는 발표되지 않음. 아래는 싱가포르의 대표적인 대형 컨벤션 시설을 소개하는 후보 참고 정보일 뿐, 개최 장소가 아님. Marina Bay Sands 안의 Sands Expo & Convention Centre(10 Bayfront Avenue)는 면적 약 11만~12만㎡(자료마다 다름)에 최대 4만 5천 명을 수용함. Suntec Singapore(마리나 센터)는 여러 층에 걸쳐 약 10만㎡ 규모이며 MRT Esplanade역·Promenade역과 가까움.",
+  "venue_source": [
+   "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
+   "https://en.wikipedia.org/wiki/Suntec_Singapore_Convention_and_Exhibition_Centre",
+   "https://conference2027.vascog.org/"
+  ],
+  "nearby": "마리나베이 일대에는 슈퍼트리로 알려진 Gardens by the Bay, 공연장 Esplanade – Theatres on the Bay, Merlion Park가 모여 있음. 인근 시빅 디스트릭트에는 옛 대법원·시청 건물을 활용한 National Gallery Singapore, National Museum, Asian Civilisations Museum이 있음. 싱가포르 호커 문화는 2020년 유네스코 인류무형문화유산에 등재되었으며, 도심 호커센터로는 빅토리아 시대 건물인 Lau Pa Sat(야외 사테 거리 운영)과 Maxwell Food Centre가 있음.",
+  "nearby_source": [
+   "https://www.visitsingapore.com/travel-tips/travelling-to-singapore/itineraries/singapore-city-tour-guide/",
+   "https://en.wikipedia.org/wiki/Civic_District",
+   "https://en.wikipedia.org/wiki/Lau_Pa_Sat",
+   "https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568"
+  ]
+ }
 }
